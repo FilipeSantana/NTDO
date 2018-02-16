@@ -1,0 +1,284 @@
+Filipe Santana da Silva - 08.09.2010
+
+
+
+NTDO Set of Classes and Relations (Update)
+
+#Infecting
+	Super Classes:
+		>ActionOnBiologicalSystem
+		
+#Biting
+	Super Classes: 
+		>ActionOnBiologicalSystem
+		>hasParticipant some Vertebrate
+
+#HumanCell
+	Super Classes:
+		>AnimalCell
+		>granularPartOf some HumanOrgan
+	#HumanMacrophageCell
+	#HumanLangerhansCell
+
+#OrganismDisposition
+	Equivalent Class
+		> Disposition and (inheresIn some LivingOrganism)
+			#VectorDisposition
+			#ReservoirDisposotion
+			#HostDisposition
+
+#InfectiousRole
+
+#ImunologicRole
+
+#ProtistCell
+	Equivalent Classes:
+		>Cell and (bearerOf some (TaxonQuality and (qualityLocated some KingdomProtozoaValueRegion)))
+		
+		#ParamastigoteCell
+			Super Classes:
+				>ProtistCell
+				>bearerOf some (DevelopmentalQuality and (qualityLocated some JuvenileValueRegion))
+				>derivesFrom some PromastigoteCell
+		
+		#PromastigoteCell
+			Super Classes:
+				>ProtistCell
+				>bearerOf some (DevelopmentalQuality and (qualityLocated some JuvenileValueRegion))
+				>derivesFrom some AmastigoteCell
+
+			#MetacyclicPromastigoteCell
+				Super Classes:
+					>bearerOf some InfectiousRole
+
+		
+		#AmastigoteCell
+			Super Classes:
+				>ProtistCell
+				>bearerOf some (DevelopmentalQuality and (qualityLocated some AdultValueRegion))
+				>bearerOf some InfectiousRole
+				>derivesFrom some PromastigoteCell
+		
+
+#Human
+	Super Classes:
+		>bearerOf some HostDisposition
+#SandFly
+	Super Classes:
+		>Insect
+		>bearerOf some (TaxonQuality and (qualityLocated some 
+			(GenusLutzomyiaValueRegion or GenusPhlebotomusValueRegion)))
+		>bearerOf some VectorDisposition
+
+#KingdomProtozoaValueRegion
+	#PhylumEuglenozoaValueRegion
+		#ClassKinetoplastidaValueRegion
+			#OrderTripanosomatidaValueRegion
+				#FamilyTripanosomatidaeValueRegion
+					#GenusLeishmaniaValueRegion
+						#LeishmaniaPeruvianaValueRegion
+						#LeishmaniaMajorStrainFriedlinValueRegion
+						#LeishmaniaChagasiValueRegion
+						#LeishmaniaDonovaniArchibaldiValueRegion
+						#LeishmaniaColombiensisValueRegion
+						#LeishmaniaBrazilienisValueRegion
+						#LeishmaniaMexicanaVenezuelensisValueRegion
+						#LeishmaniaGuyanensisValueRegion
+						#LeishmaniaEquatorensisValueRegion
+						#LeishmaniaDonovaniDonovaniValueRegion
+						#LeishmaniaPifanoiValueRegion
+						#LeishmaniaTropicaValueRegion
+						#LeishmaniaMexicanaMexicanaValueRegion
+						#LeishmaniaInfantumValueRegion
+						#LeishmaniaAethiopicaValueRegion
+						#LeishmaniaNaiffiValueRegion
+						#LeishmaniaShawiValueRegion
+						#LeishmaniaLainsoniValueRegion
+						#LeishmaniaAmazonensisValueRegion
+						#LeishmaniaPanamensisValueRegion
+						#LeishmaniaMajorValueRegion
+						#LeishmaniaAEriettiiValueRegio
+
+#Mammal
+	#Canis
+		#Dog
+			Super Classes:
+				>Canis
+				>bearerOf some ReservoirDisposition
+	#Marsupial
+		Super Classes:
+			>Mammal
+			>bearerOf some ReservoirDisposition
+	
+	#Rodent
+		Super Classes:
+			>Mammal
+			>bearerOf some ReservoirDisposition
+
+#OrderDipteraValueRegion
+	#FamilyPsychodidaeValueRegion
+		#SubfamilyPhlebotominaeValueRegion
+			#GenusLutzomyiaValueRegion
+				#SpeciesLutzomyiaSpinicrassaValueRegion
+				#SpeciesLutzomyiaWellcomeiValueRegion
+				#SpeciesLutzomyiaWhitmaniValueRegion
+				#SpeciesLutzomyiaLongipalpisValueRegion
+				#SpeciesLutzomyiaPanamanensisValueRegion
+				#SpeciesLutzomyiaEvansiValueRegion
+				#SpeciesLutzomyiaTrapidoiValueRegion
+				#SpeciesLutzomyiaIntermediaValueRegion
+				#SpeciesLutzomyiaUbiquitalisValueRegion
+				#SpeciesLutzomyiaYoungiValueRegion
+				#SpeciesLutzomyiaOlmecaValueRegion
+				#SpeciesLutzomyiaCarreraiCarreraiValueRegion
+				#SpeciesLutzomyiaGomeziValueRegion
+				#SpeciesLutzomyiaPeruensisValueRegion
+				#SpeciesLutzomyiaParaensisValueRegion
+				#SpeciesLutzomyiaCruciataValueRegion
+				#SpeciesLutzomyiaVerrucarumValueRegion
+				#SpeciesLutzomyiaOlmecaOlmecaValueRegion
+				#SpeciesLutzomyiaPanamensisValueRegion
+				#SpeciesLutzomyiaYlephiletorValueRegion
+				#SpeciesLutzomyiaSquamiventrisValueRegion
+				#SpeciesLutzomyiaAyacuchenisisValueRegion
+				#SpeciesLutzomyiaColumbianaValueRegion
+				#SpeciesLutzomyiaOvallesiValueRegion
+				#SpeciesLutzomyiaFlaviscutellataValueRegion
+				#SpeciesLutzomyiaOlmecaBicolorValueRegion
+				#SpeciesLutzomyiaAyrozaiValueRegion
+				#SpeciesLutzomyiaHartmanniValueRegion
+				#SpeciesLutzomyiaAnduzeiValueRegion
+			#GenusPhlebotomusValueRegion
+				#SpeciesPhlebotomusSergentiValueRegion
+				#SpeciesPhlebotomusPediferValueRegion
+				#SpeciesPhlebotomusAriasiValueRegion
+				#SpeciesPhlebotomusPerniciosusValueRegion
+				#SpeciesPhlebotomusLongipeValueRegion
+				#SpeciesPhlebotomusMartiniValueRegion
+				#SpeciesPhlebotomusDuboscqiValueRegion
+				#SpeciesPhlebotomusPapatasiValueRegion
+				#SpeciesPhlebotomusSalehiValueRegion
+				#SpeciesPhlebotomusOrientalisValueRegion
+				#SpeciesPhlebotomusArgentipesValueRegion
+				
+#HumanOrgan
+	Super Classes:
+		>Organ
+		>componentPartOf only Human
+		>componentPartOf some Human
+		>hasGranularPart some HumanCell
+	
+	#HumanSkin
+	#HumanNose
+	#HumanPharynx 
+	#HumanSpleen 
+	#HumanLymph
+	#HumanMouth
+	#HumanLiver
+
+#InsectOrgan
+	#SandFlyGut
+		Super Classes:
+			>componentPartOf some SandFly and
+			>componentPartOf only SandFly
+			>InsectOrgan
+
+#PathologicalDisposition
+	#Hepatosplenomegaly
+	#Lymphadenopathy
+	#ImmunologicalDecrease
+	#SkinLesion
+		#SkinUlceratedLesion
+		#SkinPapuleLesion
+		#SkinCrustedLesion
+	#Pancytopenia
+	#Hypergammaglobulinaemia
+	#WeightLoss
+	#Fever
+	
+#LeishmaniaPopulation
+	Equivalent Class:
+		>Population and (hasGranularPart some Leishmania) and (hasGranularPart only Leishmania)
+
+#SandFlyPopulation
+	Equivalent Class:
+		>Population and (hasGranularPart some SandFly) and (hasGranularPart only SandFly)
+
+#ProtistPopulation
+	Equivalent Class:
+		>Population and (hasGranularPart some Protist) and (hasGranularPart only Protist)
+	
+
+#Leishmania
+	Super Classes:
+		>Protist
+		>bearerOf some (TaxonQuality and (qualityLocated some GenusLeishmaniaValueRegion))
+		>bearerOf some InfectiousRole
+
+#TwoDimensionalPhysicalEntity
+	#GeographicLocation
+		#SouthAmericanLocation
+			#SouthAmericanPoliticalLocation
+				#BrazilLocation
+				#EquatorLocation
+				#VenezuelaLocation
+				#GuyanaLocation
+				#ParaguayLocation
+				#SurinameLocation
+				#FrenchGuyanaLocation
+				#BoliviaLocation
+				#ColombiaLocation
+				#PeruLocation
+		#NorthAmericanLocation
+			#NorthAmericanPoliticalLocation
+				#UnitedStatesOfAmericaLocation
+				#MexicoLocation
+		#CentralAmericanLocation
+			#CentralAmericanPoliticalLocation
+				#GuadeloupeLocation
+				#PanamaLocation
+				#HondurasLocation
+				#NicaraguaLocation
+				#DominicanLocation
+				#CostaRicaLocation
+				#GuatemalaLocation
+				#ElSalvadorLocation
+				#BelizeLocation
+	
+
+	
+#PathologicalProcess
+	#Leishmaniasis
+		Equivalent Class:
+			>PathologicalProcess and (hasAgent some (Leishmania and (patientIn some (PathogenTransmissionByInsect
+         		and (hasAgent some SandFly)))))
+		
+		#CutaneousLeishmaniasis
+			Super Classes:
+				>causes some SkinLesion
+				>hasLocus some HumanSkin
+		
+			#DiffuseCutaneousLeishmaniasis
+			Super Classes:
+				>CutaneousLeishmaniasis
+				>causedBy some (ImmunologicalDecrease and SkinUlceratedLesion)
+						
+		#MucocutaneousLeishmaniasis
+			Super Classes:
+				>Leishmaniasis
+				>hasLocus some (HumanMouth or HumanNose or HumanPharynx)
+				
+						
+		#VisceralLeishmanaisis
+			Super Classes:
+				>Leishmaniasis
+				>causes some (Fever or Hepatosplenomegaly or Lymphadenopathy or 
+				Pancytopenia or Hypergammaglobulinaemia or WeightLoss)
+				>hasLocus some (HumanLiver or HumanLymph or HumanSpleen)
+				
+
+Remaining point:
+	-> relate all kind of leishmaniasis with their local of infection;
+	-> describe leishmaniasis as it has organs as local of infection
+	-> relations about geographical locations
+	-> correct cell/organ part-whole relations

@@ -1,0 +1,2943 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.cin.ufpe.br/~ntdo/ntdo.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:biotop="http://purl.org/biotop/biotop.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:ru-meta="http://purl.org/imbi/ru-meta.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.cin.ufpe.br/~ntdo/ntdo.owl">
+  <owl:Ontology rdf:about="">
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Open Source</dc:rights>
+    <dc:publisher rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Centro de Informática - Federal University of Pernambuco &lt;&lt;www.cin.ufpe.br/~ntdo&gt;&gt;</dc:publisher>
+    <dc:coverage xml:lang="en">The Neglected Tropical Diseases (NTDs) are a set of diseases which persist in exactly the physical, psychosocial and economic situation of the poorest, most marginalized populations of the developing world. Most NTDs diseases are chronic diseases which are related to poverty as a promoter of parasitic, bacterial, and also viral or fungal infections. Although of major healthcare impact in developing and threshold countries NTDs are still seen as a rare event in developed countries. 
+
+In the main target countries of Latin America, Asia and Sub-Saharan Africa, the distribution of NTD is controlled by climatic conditions like Temperature (15 ° C and 40 ° C), humidity and altitude (below 2200 meters). In these regions, most of the population (around 2.7 billion people) lives on the basis of about $ 2.00 per day. This population is considered the poorest in the world, and is also listed as most vulnerable to NTDs.
+
+Among the NTDs, the vector-borne diseases (Dengue fever, Leishmaniasis, Chagas disease, American Trypanosomiasis, African Trypanosomiasis, Lymphatic Filariasis, Yellow Fever, among others) have resulted in a high level of mortality in poorer regions. These infections persist for a long time and can cause severe disability and disfigurement, resulting in fundamental economic, social and political burden. Some of these diseases affect developed countries as well.
+
+Envisioning the maintenance of health quality through health policy efforts, ontologies could play an important role in the management of information processed by health systems. If data in Clinical Information Systems and health databases would be standardized via ontologies data mining and even secondary data usage would be easier. Ontologically accessed data is integratively queryable and hence easy to compare. In particular such formalized data, if grouped, could produce new epidemiological information, to help in decision-making process. As keys challenges for infectious disease management the World Health Organization indicated an urgent need for diagnostic tools, new more effective medicines and pesticides, and the promotion of integrated vector management.
+
+A prerequisite in the fight against vector-borne diseases it has recently been recognized that efforts are needed to facilitate the access to epidemiological knowledge about these diseases in a structured way. Controlled terminologies supported by ontologies help the user to systematically use this knowledge and permit large scale automated analysis approaches like logical and rule-based machine reasoning. At this level our effort concentrates on the most important point for vector-borne disease control is the transmission path, as it drives prevention strategies and decision support. It is also important to have an integration with tools to improve health policy related outcomes.</dc:coverage>
+    <owl:imports rdf:resource="http://purl.org/biotop/biotop.owl"/>
+    <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >en</dc:language>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Filipe Santana; Daniel Schober; Stefan Schulz; Fred Freitas</dc:creator>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Neglected Tropical Disease Ontology, NTDO</dc:title>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SubfamilyCulicinaeValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="FamilyCulicidaeValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TransmittingDisposition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="PathogenInoculating"/>
+              <owl:Class rdf:ID="Transmission"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasRealization"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="OrganismEpidemiologicalDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="#PathogenInoculating"/>
+                  <owl:Class rdf:about="#Transmission"/>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SubclassActinobacteridaeValueRegion">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassActinobacteriaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#condition"/>
+  <owl:Class rdf:ID="DirectTransmission">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Direct transmission is a transmission process that is the means during which the pathogen is transmitted immediately from a reservoir, source or host to another host.
+</ru-meta:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Transmission"/>
+    </rdfs:subClassOf>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000001
+</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Direct
+ </rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#OrganismEpidemiologicalDisposition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Disposition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Chronoid">
+    <rdfs:subClassOf rdf:parseType="Resource">
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      >1</owl:qualifiedCardinality>
+      <owl:onClass>
+        <owl:Class rdf:ID="RightTimeBoundary"/>
+      </owl:onClass>
+      <owl:onProperty>
+        <owl:ObjectProperty rdf:ID="hasRightTimeBoundary"/>
+      </owl:onProperty>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TimeRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cls(@A167_65e428e3_d092_4ce3_9b3d_84612729c84c)</rdfs:subClassOf>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GFO: Chronoids are entities sui generis. Every chronoid has exactly two extremal and infinitely many inner time boundaries which are equivalently called time-points.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chronoid</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Hypergammaglobulinaemia">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DEN3">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DengueVirus"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ControlAction">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Action"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HostRole">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#inheresIn"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#patientIn"/>
+            </owl:onProperty>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="PathogenRole"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ReservoirRole"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="VectorRole"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="EpidemiologicalRole"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#patientIn"/>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="MetacyclicPromastigoteCell">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PromastigoteCell"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaYoungiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GenusLutzomyiaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Headache">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#StructuredBiologicalEntity"/>
+  <owl:Class rdf:ID="SpeciesAedesAegyptiValueRegion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >species Aedes aegypti value region</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GenusAedesValueRegion"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="SpeciesAedesAlbopictusValueRegion"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="ParamastigoteCell">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#DevelopmentalQuality"/>
+              <owl:Restriction>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#JuvenileValueRegion"/>
+                </owl:someValuesFrom>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                </owl:onProperty>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#derivesFrom"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#PromastigoteCell"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ProtistCell"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaColumbianaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLutzomyiaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BiologicalValueRegion">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ValueRegion"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#qualityLocationOf"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="BiologicalQuality"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesDengueVirusValueRegion">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >species Dengue Virus value region</rdfs:label>
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ICTV Taxonomy: 2009 Release</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GenusFlavivirusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaLainsoniValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GenusLutzomyiaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SubfamilyPhlebotominaeValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaIntermediaValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MainHostRole">
+    <rdfs:subClassOf rdf:resource="#HostRole"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ChildhoodTuberculosisDisposition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#realizationOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="ChildhoodTuberculosis"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="TuberculosisDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#ChildhoodTuberculosis"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassActinobacteriaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PhylumActinobacteriaValueRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:ID="ClassicalDengueFever">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DengueFever"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DEN2">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DengueVirus"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Marsupial">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Mammal"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="ReservoirDisposition"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AcquiredImmunodeficiencySyndromeDisposition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="AcquiredImmunodeficiencySyndrome"/>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#AcquiredImmunodeficiencySyndrome"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="AirborneTransmission">
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:ID="Air"/>
+                  <owl:Class rdf:ID="Dust"/>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:allValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            </owl:onProperty>
+            <owl:allValuesFrom>
+              <owl:Class rdf:ID="GeographicLocation"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            </owl:onProperty>
+            <owl:allValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Microorganism"/>
+                  <owl:Restriction>
+                    <owl:onProperty>
+                      <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#causes"/>
+                    </owl:onProperty>
+                    <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                  </owl:Restriction>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="IndirectTransmission"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="#Air"/>
+                  <owl:Class rdf:about="#Dust"/>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#GeographicLocation"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Microorganism"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Airborne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host while suspended in the air as dust.</ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000009</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Airborne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaPeruensisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Myalgia">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BiologicalQuality">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#BiologicalValueRegion"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Quality"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+            <owl:someValuesFrom rdf:resource="#BiologicalValueRegion"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#BacterialCell"/>
+  <owl:Class rdf:ID="LeishmaniaDonovaniDonovaniValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaNaiffiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaDonovaniArchibaldiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaUbiquitalisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ContactTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000007</dc:identifier>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Contact transmission is a direct transmission process during which the pathogen is transmitted from a reservoir, source or host to another host by kissing, skin-to-skin contact, sexual intercourse, or by contact with soil or vegetation containing the pathogen.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Contact</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#DirectTransmission"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SubfamilyOrthoretrovirinaeValueRegion">
+    <dc:source xml:lang="en">ICTV 2009 Release</dc:source>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="FamilyRetroviridaeValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pancytopenia">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PlacentalTransmission">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Placental</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Placental transmission is a congenital transmission process during which the pathogen is transmitted directly from mother to child across the placental barrier.</ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000018</dc:identifier>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CongenitalTransmission"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Virus"/>
+  <owl:Class rdf:ID="SpeciesPhlebotomusArgentipesValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaCarreraiCarreraiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="EvaluationQuality">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Quality"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AnalyticEpidemiology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Epidemiology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaHartmanniValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BiteTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000014</dc:identifier>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="VectorborneTransmission"/>
+    </rdfs:subClassOf>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vector-borne bite transmission is an indirect vector-borne transmission during which the pathogen is indirectly transferred by insect bites from a reservoir, source or host via a vector to another host.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vector-borne bite</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaGuyanensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaOlmecaOlmecaValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SkinPapuleLesion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SkinLesion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CasualtyEvent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Event"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+                  <owl:Class>
+                    <owl:complementOf rdf:resource="http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity"/>
+                  </owl:Class>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#causedBy"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#GeographicLocation"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasCasualtyPatient"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="DengueFeverDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#DengueFever"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="EuropeLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeographicLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PhysicalLength"/>
+  <owl:Class rdf:ID="ExtraPulmonarTuberculosis">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="Tuberculosis"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:complementOf>
+                  <owl:Class rdf:ID="Lung"/>
+                </owl:complementOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:complementOf>
+              <owl:Class rdf:about="#Lung"/>
+            </owl:complementOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Study">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#IntellectualProduct"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DEN4">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DengueVirus"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AsiaLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeographicLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Transmission">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Action"/>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000000</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transmission Process</rdfs:label>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A process that is the means during which the pathogen is transmitted directly or indirectly from its natural reservoir, a susceptible host or source to a new host.</dc:description>
+  </owl:Class>
+  <owl:Class rdf:ID="FamilyFlaviviridaeValueRegion">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#KingdomVirusesValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OrderTrypanosomatidaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ClassKinetoplastidaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TwoDimensionalPhysicalEntity"/>
+  <owl:Class rdf:ID="DeathEvent">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Event"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#GeographicLocation"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+            </owl:someValuesFrom>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasDeathPatient"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasDeathPrimaryCause"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <rdf:Description>
+            <owl:onClass>
+              <owl:Class rdf:about="#RightTimeBoundary"/>
+            </owl:onClass>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasInstant"/>
+            </owl:onProperty>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >1</owl:qualifiedCardinality>
+          </rdf:Description>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PathogenDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#OrganismEpidemiologicalDisposition"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="PathogenInfecting"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#PathogenInfecting"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Rodent">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Mammal"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#ReservoirDisposition"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DropletSpreadTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Droplet Spread</dc:identifier>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000008</dc:identifier>
+    <rdfs:subClassOf rdf:resource="#DirectTransmission"/>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Droplet spread transmission is a direct transmission process during which the pathogen is transmitted from a reservoir, source or host to another host by spray of aerosols over a short distance, spray from sneezing, coughing or talking.</ru-meta:definition>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaInfantumValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#BiologicalSizeValueRegion">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#ValueRegion"/>
+    <owl:disjointWith rdf:resource="#BiologicalValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#BiologicalSystemRole"/>
+  <owl:Class rdf:ID="SkinCrustedLesion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SkinLesion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaPanamensisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Vertebrate"/>
+  <owl:Class rdf:about="#Epidemiology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Discipline"/>
+    </rdfs:subClassOf>
+    <dc:description xml:lang="en">Epidemiology is the study of the distribution and determinants of health-related states or events in specified populations, and the application of this study to the control of health problems.
+
+LAST, J M, editor. Dictionary of Epidemiology. 4th ed. New York: Oxford University Press; 2001, p.61.  </dc:description>
+  </owl:Class>
+  <owl:Class rdf:ID="InsectBorneTransmission">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >insect borne</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insect borne transmission is an arthropod vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary insect vector such as a flea or mosquito to another host.</ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000020</dc:identifier>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ArthropodBorneTransmission"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="IntermediaryHostRole">
+    <owl:disjointWith rdf:resource="#MainHostRole"/>
+    <rdfs:subClassOf rdf:resource="#HostRole"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Insect"/>
+  <owl:Class rdf:ID="DengueHemorragicFever">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DengueFever"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PhysicalForce"/>
+  <owl:Class rdf:ID="LeishmaniaAmazonensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusSergentiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Cell"/>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#CellByTaxonPartition"/>
+  <owl:Class rdf:about="#GenusFlavivirusValueRegion">
+    <rdfs:subClassOf rdf:resource="#FamilyFlaviviridaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Dust">
+    <dc:description xml:lang="en">Wikipedia - Dust consists of particles in the atmosphere that arise from various sources such as soil dust lifted up by wind, volcanic eruptions, and pollution. Dust in homes, offices, and other human environments contains small amounts of plant pollen, human and animal hairs, textile fibers, paper fibres, minerals from outdoor soil, human skin cells, and many other materials which may be found in the local environment.</dc:description>
+    <rdfs:seeAlso xml:lang="en">http://en.wikipedia.org/wiki/Dust</rdfs:seeAlso>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PortionOfHeterogenousSolid"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Hurting">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Poisoning"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="DeathRateDueToPathologicalProcess">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="DeathRate"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                  <owl:Restriction>
+                    <owl:onProperty>
+                      <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#precedes"/>
+                    </owl:onProperty>
+                    <owl:someValuesFrom>
+                      <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                          <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#PreventionAction"/>
+                          <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#Treating"/>
+                          <owl:Class rdf:about="#ControlAction"/>
+                          <owl:Class rdf:ID="PromotionAction"/>
+                        </owl:unionOf>
+                      </owl:Class>
+                    </owl:someValuesFrom>
+                  </owl:Restriction>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#causedBy"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >death rate due to pathological process</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#precedes"/>
+                <owl:allValuesFrom>
+                  <owl:Class>
+                    <owl:unionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#PreventionAction"/>
+                      <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#Treating"/>
+                      <owl:Class rdf:about="#ControlAction"/>
+                      <owl:Class rdf:about="#PromotionAction"/>
+                    </owl:unionOf>
+                  </owl:Class>
+                </owl:allValuesFrom>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#causedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PhylumEuglenozoaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#KingdomProtozoaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeftTimeBoundary">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#RightTimeBoundary"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="TimeBoundary"/>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="leftTimeBoundaryOf"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#Chronoid"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#AcquiredImmunodeficiencySyndrome">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="HIV1"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#AcquiredImmunodeficiencySyndromeDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <ru-meta:synonym xml:lang="en">AIDS</ru-meta:synonym>
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="#HIV1"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <owl:allValuesFrom rdf:resource="#AcquiredImmunodeficiencySyndromeDisposition"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DescriptiveEpidemiology">
+    <rdfs:subClassOf rdf:resource="#Epidemiology"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Event">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Events here are known to exhibit a certain behavior relative to a process.</ru-meta:definition>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#GeographicLocation"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasParticipant"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#MaterialEntity"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#precededBy"/>
+            </owl:onProperty>
+            <owl:allValuesFrom>
+              <owl:Class rdf:ID="BiologicalDeathProcess"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+          <rdf:Description>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >1</owl:qualifiedCardinality>
+            <owl:onClass>
+              <owl:Class rdf:about="#RightTimeBoundary"/>
+            </owl:onClass>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#hasInstant"/>
+            </owl:onProperty>
+          </rdf:Description>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Event</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Canis">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Mammal"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusPerniciosusValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusOrientalisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#FamilyCulicidaeValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#OrderDipteraValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ChildhoodTuberculosis">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Tuberculosis"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+                  <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#JuvenileOrganism"/>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+              <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#JuvenileOrganism"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="GastroIntestinalTransmission">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#VectorborneTransmission"/>
+    </rdfs:subClassOf>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000015</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vector-borne gastro-intestinal</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vector-borne gastro-intestinal transmission is an indirect vector-borne transmission process during which the pathogen is transported, from a reservoir, source or host to another host, within the vector and undergoes part of it's lifecycle in the intermediate host.</ru-meta:definition>
+  </owl:Class>
+  <owl:Class rdf:ID="AedesAegypti">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aedes aegypti</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Insect"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#SpeciesAedesAegyptiValueRegion"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HumanLangerhansCell">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HumanMacrophageCell"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="HumanCell"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaPeruvianaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PhysicalMass"/>
+  <owl:Class rdf:ID="Lymphadenopathy">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TimeRegion">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GFO: Time Regions are defined as the mereological sum of chronoids, i.e. time regions may consist of non-connected intervals of time.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#TemporalEntity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time region</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="AmastigoteCell">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#derivesFrom"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#PromastigoteCell"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:ID="InfectiousRole"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#DevelopmentalQuality"/>
+              <owl:Restriction>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#AdultValueRegion"/>
+                </owl:someValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProtistCell"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ReservoirRole">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VectorRole"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:ID="PathogenReserving"/>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EpidemiologicalRole"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#PathogenReserving"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaLongipalpisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Efficiency">
+    <rdfs:subClassOf rdf:resource="#EvaluationQuality"/>
+    <ru-meta:definition xml:lang="en">The ability of a [health care] program to produce the intended results with a minimum expenditure of time and resources.
+
+Centers for Disease Control and Prevention. (2006). Principles of Epidemiology in Public Health Practice. Health (San Francisco) (3rd ed., p. 512). Atlanta, GA: U. S. Department of Health and Human Services.</ru-meta:definition>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaSquamiventrisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MycobacteriumTuberculosisCell">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#BacterialCell"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:ID="SpeciesMycobacteriumTuberculosisValueRegion"/>
+                </owl:someValuesFrom>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Function">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Disposition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DEN1">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DengueVirus"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VectorDisposition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#VectorborneTransmission"/>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TransmittingDisposition"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#VectorborneTransmission"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="FamilyMycobacteriaceaeValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SubOrderCorynebacterineaeValueRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaTropicaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ArthropodBorneTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000019</dc:identifier>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#VectorborneTransmission"/>
+    </rdfs:subClassOf>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Arthropod borne transmission is a vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary arthropod vector to another host.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arthropod borne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="GenusLentivirusValueRegion">
+    <dc:source xml:lang="en">ICTV 2009 Release</dc:source>
+    <rdfs:subClassOf rdf:resource="#SubfamilyOrthoretrovirinaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FamilyPsychodidaeValueRegion">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#OrderDipteraValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusLongipeValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PathogenReserving">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#outcomeOf"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#PathogenInoculating"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <owl:allValuesFrom>
+              <owl:Class rdf:about="#ReservoirDisposition"/>
+            </owl:allValuesFrom>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ActionOnBiologicalSystem"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:about="#ReservoirDisposition"/>
+                </owl:someValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#outcomeOf"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#PathogenInoculating"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#PathogenInfecting">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#PathogenDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasParticipant"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ActionOnBiologicalSystem"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <owl:someValuesFrom rdf:resource="#PathogenDisposition"/>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasOutcome"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#PathogenInoculating"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#outcomeOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaChagasiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ImmunologicRole"/>
+  <owl:Class rdf:about="#TimeBoundary">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GFO: Time boundaries depend on a chronoids and can coincide. Left time boundaries, if viewed from the perspective of bounding a specific chronoid, are those which are earlier than any inner or right time boundary of that chronoid. On the other hand, within a pair of coincident time boundaries, a left time boundary is later than the right time boundary in that pair. [FL, 2008-02-27]</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Time boundary</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#TemporalEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusAriasiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusSalehiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusPhlebotomusValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ExtraPulmonarTuberculosisDisposition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#ExtraPulmonarTuberculosis"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TuberculosisDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#ExtraPulmonarTuberculosis"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#SignallingRole"/>
+  <owl:Class rdf:ID="GenusMycobacteriumValueRegion">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="#FamilyMycobacteriaceaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Fever">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#FamilyRetroviridaeValueRegion">
+    <dc:source xml:lang="en">ICTV 2009 Release</dc:source>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#KingdomVirusesValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaBrazilienisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ImmunologicalDecrease">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaGomeziValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Protist"/>
+  <owl:Class rdf:ID="LeishmaniaMexicanaMexicanaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VehicleBorneFomite">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vehicle-borne fomite transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate objects including: medical instruments, cloth, fur, metal or plastic utensils.</ru-meta:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="VehicleborneTransmission"/>
+    </rdfs:subClassOf>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000011</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vehicle-borne fomite</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#GenusPhlebotomusValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SubfamilyPhlebotominaeValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#InfectiousRole">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#BiologicalSystemRole"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TuberculosisDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Tuberculosis"/>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Tuberculosis"/>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PathogenHosting">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+              <owl:Class rdf:about="#PathogenInoculating"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#outcomeOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasParticipant"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <owl:allValuesFrom rdf:resource="#PathogenDisposition"/>
+          </owl:Restriction>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:allValuesFrom>
+              <owl:Class rdf:ID="HostDisposition"/>
+            </owl:allValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ActionOnBiologicalSystem"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <owl:someValuesFrom>
+                  <owl:Class rdf:about="#HostDisposition"/>
+                </owl:someValuesFrom>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                  <owl:Class rdf:about="#PathogenInoculating"/>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#outcomeOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#AnimalCell"/>
+  <owl:Class rdf:about="#PhylumActinobacteriaValueRegion">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#KingdomBacteriaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesHumanImmunodeficiencyVirus1ValueRegion">
+    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ICTV Taxonomy: 2009 Release</dc:source>
+    <rdfs:subClassOf rdf:resource="#GenusLentivirusValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ReservoirDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#OrganismEpidemiologicalDisposition"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+            <owl:someValuesFrom rdf:resource="#PathogenReserving"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#PathogenReserving"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ProtistCell">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Cell"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+                  <owl:Restriction>
+                    <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                    <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#KingdomProtozoaValueRegion"/>
+                  </owl:Restriction>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#CellByTaxonPartition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SpeciesMycobacteriumTuberculosisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusMycobacteriumValueRegion"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaAethiopicaValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DeathDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Disposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#DeathEvent"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="AfricaLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeographicLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaCruciataValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#RightTimeBoundary">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TimeBoundary"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Chronoid"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="rightTimeBoundaryOf"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaMexicanaVenezuelensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#DevelopmentalQuality"/>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#DevelopmentalValueRegion"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#DevelopmentalValueRegion"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#HostDisposition"/>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaPanamensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaTrapidoiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SpeciesAedesAlbopictusValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusAedesValueRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >species Aedes albopictus value region</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#PathogenRole">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Restriction>
+                <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                <owl:onProperty>
+                  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#agentIn"/>
+                </owl:onProperty>
+              </owl:Restriction>
+              <owl:Restriction>
+                <owl:allValuesFrom rdf:resource="#Transmission"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#patientIn"/>
+              </owl:Restriction>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EpidemiologicalRole"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Restriction>
+                    <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                    <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#agentIn"/>
+                  </owl:Restriction>
+                  <owl:Restriction>
+                    <owl:someValuesFrom rdf:resource="#Transmission"/>
+                    <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#patientIn"/>
+                  </owl:Restriction>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="#ReservoirRole"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#VectorRole"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="Pain">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Population"/>
+  <owl:Class rdf:about="#IndirectTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000002</dc:identifier>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indirect transmission is a transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by intermediary vehicles, vectors or as airborne dust particles.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="#Transmission"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indirect</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusPediferValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusPhlebotomusValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaWhitmaniValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MycobacteriumTuberculosisTransfer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#AirborneTransmission"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom rdf:resource="#MycobacteriumTuberculosisCell"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#MycobacteriumTuberculosisCell"/>
+              <owl:Restriction>
+                <owl:allValuesFrom>
+                  <owl:Class rdf:about="#Tuberculosis"/>
+                </owl:allValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#causes"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#GreatApe"/>
+  <owl:Class rdf:ID="SpeciesLutzomyiaFlaviscutellataValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaWellcomeiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SkinLesion">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ClassKinetoplastidaValueRegion">
+    <rdfs:subClassOf rdf:resource="#PhylumEuglenozoaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CongenitalTransmission">
+    <rdfs:subClassOf rdf:resource="#DirectTransmission"/>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000006</dc:identifier>
+    <ru-meta:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mother-to-child transmission</ru-meta:synonym>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital transmission is a direct transmission process during which the pathogen is transmitted directly from mother to child at or around the time of birth.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#DeathRate">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#DeadBody"/>
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Population"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#Measure"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                  <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#DeadBody"/>
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Population"/>
+                </owl:intersectionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCI/PT - the ratio of deaths in an area to the population of that area; expressed per 1000 per year.</ru-meta:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >death rate</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Tuberculosis">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#MycobacteriumTuberculosisCell"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <owl:someValuesFrom rdf:resource="#TuberculosisDisposition"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="#MycobacteriumTuberculosisCell"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="#TuberculosisDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PhysicalState"/>
+  <owl:Class rdf:about="#PathogenInoculating">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasParticipant"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="#HostDisposition"/>
+                  <owl:Class rdf:about="#PathogenDisposition"/>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="#VectorDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ActionOnBiologicalSystem"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <owl:someValuesFrom rdf:resource="#VectorDisposition"/>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaPanamanensisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#HIV1">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Virus"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                <owl:someValuesFrom rdf:resource="#SpeciesHumanImmunodeficiencyVirus1ValueRegion"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PhysicalVolume"/>
+  <owl:Class rdf:about="#HumanMacrophageCell">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#HumanCell"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PulmonarTuberculosis">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Tuberculosis"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Lung"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="#Lung"/>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#AgeQuality"/>
+  <owl:Class rdf:ID="AmericaLocation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GeographicLocation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Discipline">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#ImmaterialNonphysicalEntity"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SubOrderCorynebacterineaeValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="OrderActinomycetalesValueRegion"/>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:ID="ExperimentalStudy">
+    <rdfs:subClassOf rdf:resource="#Study"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Eukaryote"/>
+  <owl:Class rdf:ID="SpeciesLutzomyiaVerrucarumValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#HostDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#OrganismEpidemiologicalDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#PathogenHosting"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#PathogenHosting"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MycobacteriumTuberculosisPopulation">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Population"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#MycobacteriumTuberculosisCell"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasGranularPart"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasGranularPart"/>
+            <owl:allValuesFrom rdf:resource="#MycobacteriumTuberculosisCell"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#GenusAedesValueRegion">
+    <rdfs:subClassOf rdf:resource="#SubfamilyCulicinaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PromastigoteCell">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#DevelopmentalQuality"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#JuvenileValueRegion"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#AmastigoteCell"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#derivesFrom"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#ProtistCell"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaAnduzeiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusDuboscqiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusPhlebotomusValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#GeographicLocation">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#TwoDimensionalPhysicalEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaSpinicrassaValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HivRelatedTuberculosis">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#cooccurringWith"/>
+        <owl:allValuesFrom rdf:resource="#AcquiredImmunodeficiencySyndrome"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Tuberculosis"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#cooccurringWith"/>
+            <owl:someValuesFrom rdf:resource="#AcquiredImmunodeficiencySyndrome"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#PromotionAction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >promotion action</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCI/PT - Encouragement of the progress or growth or acceptance of something.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Action"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Hepatosplenomegaly">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MusclePain">
+    <rdfs:subClassOf rdf:resource="#Pain"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Rash">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Organ"/>
+  <owl:Class rdf:ID="BonePain">
+    <owl:disjointWith rdf:resource="#MusclePain"/>
+    <rdfs:subClassOf rdf:resource="#Pain"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PulmonarTuberculosisDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TuberculosisDisposition"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+            <owl:someValuesFrom rdf:resource="#PulmonarTuberculosis"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+        <owl:allValuesFrom rdf:resource="#PulmonarTuberculosis"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#LivingOrganism">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#StructuredBiologicalEntity"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            <owl:someValuesFrom rdf:resource="#GeographicLocation"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#VectorborneTransmission">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vector-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an animate intermediary vector to another host. Most vectors are arthropods such as mosquitoes, fleas, and ticks.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="#IndirectTransmission"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vector-borne</rdfs:label>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000005</dc:identifier>
+  </owl:Class>
+  <owl:Class rdf:about="#SubfamilyPhlebotominaeValueRegion">
+    <rdfs:subClassOf rdf:resource="#FamilyPsychodidaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VehicleborneTransmission">
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vehicle-borne transmission is an indirect transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by inanimate intermediary vehicle objects.</dc:description>
+    <rdfs:subClassOf rdf:resource="#IndirectTransmission"/>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000010</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vehicle-borne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaMajorValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="VehicleBorneDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TransmittingDisposition"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#VehicleborneTransmission"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="#VehicleborneTransmission"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaMajorStrainFriedlinValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BiologicalDeathProcess">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity"/>
+          <owl:Restriction>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+                  <owl:Class rdf:about="#CasualtyEvent"/>
+                  <owl:Class>
+                    <owl:intersectionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity"/>
+                      <owl:Class>
+                        <owl:complementOf rdf:resource="#BiologicalDeathProcess"/>
+                      </owl:Class>
+                    </owl:intersectionOf>
+                  </owl:Class>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:someValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#causedBy"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="hasConvalescentPatient"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <rdf:Description>
+            <owl:onClass rdf:resource="#Chronoid"/>
+            <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+            >1</owl:qualifiedCardinality>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="projectsTo"/>
+            </owl:onProperty>
+          </rdf:Description>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom>
+              <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+                  <owl:Class rdf:about="#CasualtyEvent"/>
+                  <owl:Class>
+                    <owl:intersectionOf rdf:parseType="Collection">
+                      <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity"/>
+                      <owl:Class>
+                        <owl:complementOf rdf:resource="#BiologicalDeathProcess"/>
+                      </owl:Class>
+                    </owl:intersectionOf>
+                  </owl:Class>
+                </owl:unionOf>
+              </owl:Class>
+            </owl:allValuesFrom>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#causedBy"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Air">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#CompoundOfCollectiveMaterialEntities"/>
+    <dc:description xml:lang="en">Wikipedia - Air is the part of the Earth's atmosphere that living organisms breathe. It is made up of 78% nitrogen, 21% oxygen and 1% other substances (including water vapor).</dc:description>
+    <rdfs:seeAlso xml:lang="en">http://en.wikipedia.org/wiki/Air_(disambiguation)</rdfs:seeAlso>
+  </owl:Class>
+  <owl:Class rdf:ID="VehicleBorneIngestion">
+    <rdfs:subClassOf rdf:resource="#VehicleborneTransmission"/>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vehicle-borne ingestion transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by ingestion of fluids or foods or food products including: food, water, milk, or meat products.</ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000012</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vehicle-borne ingestion</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="VehicleBorneMedical">
+    <rdfs:subClassOf rdf:resource="#VehicleborneTransmission"/>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000013</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vehicle-borne medical</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vehicle-borne medical transmission is an indirect vehicle-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by biological products including: blood, serum, plasma, tissue, or organs.</ru-meta:definition>
+  </owl:Class>
+  <owl:Class rdf:ID="WeightLoss">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HivRelatedTuberculosisDisposition">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#TuberculosisDisposition"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasRealization"/>
+            <owl:someValuesFrom rdf:resource="#HivRelatedTuberculosis"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+        <owl:allValuesFrom rdf:resource="#HivRelatedTuberculosis"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ObservationalStudy">
+    <rdfs:subClassOf rdf:resource="#Study"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DengueFever">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasAgent"/>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#DengueVirus"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#DengueFeverDisposition"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#realizationOf"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaOvallesiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#VitaminRole"/>
+  <owl:Class rdf:ID="BirthEvent">
+    <owl:disjointWith rdf:resource="#CasualtyEvent"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Event"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            <owl:someValuesFrom rdf:resource="#GeographicLocation"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasProcessualPart"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasLocus"/>
+            <owl:allValuesFrom rdf:resource="#GeographicLocation"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+            <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Dog">
+    <rdfs:subClassOf rdf:resource="#Canis"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="#ReservoirDisposition"/>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="OceaniaLocation">
+    <rdfs:subClassOf rdf:resource="#GeographicLocation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaAyacuchenisisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Bleed">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalCondition"/>
+  </owl:Class>
+  <owl:Class rdf:about="#HumanCell">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#AnimalCell"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaShawiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AedesAlbopictus">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Insect"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#SpeciesAedesAlbopictusValueRegion"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aedes albopictus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#ProtistPopulation">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Population"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Protist"/>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasGranularPart"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#hasGranularPart"/>
+            <owl:allValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Protist"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaPifanoiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MosquitoBorneTransmission">
+    <rdfs:subClassOf rdf:resource="#InsectBorneTransmission"/>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mosquito borne transmission is an insect borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host via an intermediary mosquito vector to another host.</ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000021</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mosquito borne</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaOlmecaValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaAyrozaiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#EpidemiologicalRole">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Role"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AssymptomaticDengueFever">
+    <rdfs:subClassOf rdf:resource="#DengueFever"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Efficacy">
+    <ru-meta:definition xml:lang="en">The ability to produce results under ideal conditions.
+
+Centers for Disease Control and Prevention. (2006). Principles of Epidemiology in Public Health Practice. Health (San Francisco) (3rd ed., p. 512). Atlanta, GA: U. S. Department of Health and Human Services.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="#EvaluationQuality"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SkinUlceratedLesion">
+    <rdfs:subClassOf rdf:resource="#SkinLesion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Effectiveness">
+    <ru-meta:definition xml:lang="en">The ability of a [health care] program to produce the intended or expected results in the field.
+
+Centers for Disease Control and Prevention. (2006). Principles of Epidemiology in Public Health Practice. Health (San Francisco) (3rd ed., p. 512). Atlanta, GA: U. S. Department of Health and Human Services.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="#EvaluationQuality"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaAEriettiiValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#VectorRole">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#EpidemiologicalRole"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+            <owl:someValuesFrom>
+              <owl:Restriction>
+                <owl:someValuesFrom rdf:resource="#Transmission"/>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#agentIn"/>
+              </owl:Restriction>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#agentIn"/>
+            <owl:allValuesFrom rdf:resource="#Transmission"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#inheresIn"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#VertebratePopulation"/>
+  <owl:Class rdf:ID="DengueShockSyndrome">
+    <rdfs:subClassOf rdf:resource="#DengueHemorragicFever"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaColombiensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MechanicalTransmission">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >TRANS:0000003</dc:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mechanical</rdfs:label>
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mechanical transmission is an indirect vector-borne transmission process during which the pathogen is indirectly transferred from a reservoir, source or host to another host by being transported on the external surface of the vector.</ru-meta:definition>
+    <rdfs:subClassOf rdf:resource="#VectorborneTransmission"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusMartiniValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusPhlebotomusValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaParaensisValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DengueVirus">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Virus"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#TaxonQuality"/>
+              <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#qualityLocated"/>
+                <owl:someValuesFrom rdf:resource="#SpeciesDengueVirusValueRegion"/>
+              </owl:Restriction>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:someValuesFrom>
+        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#bearerOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FamilyTripanosomatidaeValueRegion">
+    <rdfs:subClassOf rdf:resource="#OrderTrypanosomatidaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaYlephiletorValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LeishmaniaEquatorensisValueRegion">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#GenusLeishmaniaValueRegion"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GenusLeishmaniaValueRegion">
+    <rdfs:subClassOf rdf:resource="#FamilyTripanosomatidaeValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Lung">
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Organ"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesPhlebotomusPapatasiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusPhlebotomusValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaEvansiValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpeciesLutzomyiaOlmecaBicolorValueRegion">
+    <rdfs:subClassOf rdf:resource="#GenusLutzomyiaValueRegion"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Factor">
+    <ru-meta:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A chemical substance, often an enzyme, that plays a crucial role in a biological process.
+ </ru-meta:definition>
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IDOMAL:0000341
+</dc:identifier>
+    <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Role"/>
+  </owl:Class>
+  <owl:Class rdf:about="#OrderActinomycetalesValueRegion">
+    <rdfs:subClassOf rdf:resource="#SubclassActinobacteridaeValueRegion"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NCBI Taxonomy</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#hasConvalescentPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#BiologicalDeathProcess"/>
+    <rdfs:range rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#participatesIn"/>
+  <owl:ObjectProperty rdf:about="#projectsTo">
+    <rdfs:range rdf:resource="#Chronoid"/>
+    <rdfs:domain rdf:resource="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="names">
+    <rdfs:domain rdf:resource="#GeographicLocation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasInstant">
+    <rdfs:range rdf:resource="#RightTimeBoundary"/>
+    <rdfs:domain rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLeftTimeBoundary">
+    <rdfs:range rdf:resource="#LeftTimeBoundary"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasTimeBoundary"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#spatiallyRelatedTo"/>
+  <owl:ObjectProperty rdf:about="#hasRightTimeBoundary">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasTimeBoundary"/>
+    </rdfs:subPropertyOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="#RightTimeBoundary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#granularPartOf"/>
+  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#componentPartOf"/>
+  <owl:ObjectProperty rdf:ID="existsAt">
+    <rdfs:range rdf:resource="#TimeBoundary"/>
+    <rdfs:domain rdf:resource="http://purl.org/biotop/biotop.owl#MaterialEntity"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="deadPatientOf">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/biotop.owl#patientIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#physicallyLocatedIn"/>
+  <owl:ObjectProperty rdf:about="#leftTimeBoundaryOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#LeftTimeBoundary"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="timeBoundaryOf"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="#hasLeftTimeBoundary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasCasualtyPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    <rdfs:domain rdf:resource="#CasualtyEvent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasTimeBoundary">
+    <rdfs:range rdf:resource="#TimeBoundary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasDeathPatient">
+    <rdfs:range rdf:resource="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    <owl:inverseOf rdf:resource="#deadPatientOf"/>
+    <rdfs:domain rdf:resource="#DeathEvent"/>
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+      <owl:ObjectProperty rdf:about="#hasConvalescentPatient"/>
+      <owl:ObjectProperty rdf:about="#hasDeathPrimaryCause"/>
+    </owl:propertyChainAxiom>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/biotop.owl#hasPatient"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasDeathPrimaryCause">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/biotop.owl#causedBy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/biotop/biotop.owl#condition"/>
+    <rdfs:domain rdf:resource="#DeathEvent"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#rightTimeBoundaryOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#timeBoundaryOf"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf rdf:resource="#hasRightTimeBoundary"/>
+    <rdfs:domain rdf:resource="#RightTimeBoundary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#timeBoundaryOf">
+    <rdfs:domain rdf:resource="#TimeBoundary"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="name"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#GreatApe"/>
+      <owl:Class rdf:about="#Canis"/>
+      <owl:Class rdf:about="#Marsupial"/>
+      <owl:Class rdf:about="#Rodent"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#DEN1"/>
+      <owl:Class rdf:about="#DEN2"/>
+      <owl:Class rdf:about="#DEN3"/>
+      <owl:Class rdf:about="#DEN4"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:NamedIndividual rdf:ID="RightRimeBoundary1">
+    <rdf:type rdf:resource="#RightTimeBoundary"/>
+  </owl:NamedIndividual>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#SpeciesPhlebotomusArgentipesValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusAriasiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusDuboscqiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusLongipeValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusMartiniValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusOrientalisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusPapatasiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusPediferValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusPerniciosusValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusSalehiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesPhlebotomusSergentiValueRegion"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+  <owl:AllDisjointClasses/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <DengueFever rdf:ID="DengueFever_1"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#SkinCrustedLesion"/>
+      <owl:Class rdf:about="#SkinPapuleLesion"/>
+      <owl:Class rdf:about="#SkinUlceratedLesion"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#HostDisposition"/>
+      <owl:Class rdf:about="#PathogenDisposition"/>
+      <owl:Class rdf:about="#ReservoirDisposition"/>
+      <owl:Class rdf:about="#VectorDisposition"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+  <owl:AllDisjointClasses/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+  <owl:AllDisjointClasses/>
+  <AmericaLocation rdf:ID="AmericaLocation_4"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#LeishmaniaAEriettiiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaAethiopicaValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaAmazonensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaBrazilienisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaChagasiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaColombiensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaDonovaniArchibaldiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaDonovaniDonovaniValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaEquatorensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaGuyanensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaInfantumValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaLainsoniValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaMajorStrainFriedlinValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaMajorValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaMexicanaMexicanaValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaMexicanaVenezuelensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaNaiffiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaPanamensisValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaPeruvianaValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaPifanoiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaShawiValueRegion"/>
+      <owl:Class rdf:about="#LeishmaniaTropicaValueRegion"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <biotop:Human rdf:ID="Human_2"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <GeographicLocation rdf:ID="GeographicLocation_3"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#Fever"/>
+      <owl:Class rdf:about="#Hepatosplenomegaly"/>
+      <owl:Class rdf:about="#Hypergammaglobulinaemia"/>
+      <owl:Class rdf:about="#Lymphadenopathy"/>
+      <owl:Class rdf:about="#Pancytopenia"/>
+      <owl:Class rdf:about="#WeightLoss"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#AmastigoteCell"/>
+      <owl:Class rdf:about="#ParamastigoteCell"/>
+      <owl:Class rdf:about="#PromastigoteCell"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#SpeciesLutzomyiaAnduzeiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaAyacuchenisisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaAyrozaiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaCarreraiCarreraiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaColumbianaValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaCruciataValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaEvansiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaFlaviscutellataValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaGomeziValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaHartmanniValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaIntermediaValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaLongipalpisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaOlmecaBicolorValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaOlmecaOlmecaValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaOlmecaValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaOvallesiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaPanamanensisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaPanamensisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaParaensisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaPeruensisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaSpinicrassaValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaSquamiventrisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaTrapidoiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaUbiquitalisValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaVerrucarumValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaWellcomeiValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaWhitmaniValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaYlephiletorValueRegion"/>
+      <owl:Class rdf:about="#SpeciesLutzomyiaYoungiValueRegion"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#FruitFly"/>
+      <owl:Class rdf:about="#AedesAegypti"/>
+      <owl:Class rdf:about="#AedesAlbopictus"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="#AfricaLocation"/>
+      <owl:Class rdf:about="#AmericaLocation"/>
+      <owl:Class rdf:about="#AsiaLocation"/>
+      <owl:Class rdf:about="#EuropeLocation"/>
+      <owl:Class rdf:about="#OceaniaLocation"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/coverage"/>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+  <owl:NamedIndividual rdf:ID="LeftTimeBoundary1">
+    <rdf:type rdf:resource="#LeftTimeBoundary"/>
+  </owl:NamedIndividual>
+  <owl:AllDisjointClasses/>
+  <owl:AllDisjointClasses/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->

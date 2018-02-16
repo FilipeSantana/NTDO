@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:cc="http://politec.com.br/componentes"
+	xml:lang="pt-br" lang="pt-br">
+    <head>
+        <title>Neglected Tropical Disease Ontology - NTDO Project</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.ui.all.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/> 
+    </head>
+    <body>
+    <div style="color:white; background:#3B5998;">
+	    <h1>
+			NTDO Project
+		</h1> 
+	</div>
+    <h2>
+		<img src="images/seta_cidadao.gif" alt="" /> &nbsp; SINAN/SIM SPARQL QUERY EDITOR 
+	</h2>  
+	<h:form id="form1">
+       <h:inputTextarea id="comments" value="#{clienteMB.message}" cols="100" rows="15" />
+       <br/>
+       <h:commandButton id="button1" value="Submit Query" action="#{clienteMB.executeQuery}" />
+       <h:commandButton id="button2" value="Back" action="index.jsp" />
+       <br/><br/>
+       
+        <h2>
+			<img src="images/seta_cidadao.gif" alt="" /> &nbsp; RESULTS 
+		</h2>
+       
+       <h:dataTable id="box-table-b" value="#{clienteMB.resultados}" var="item"> 
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Patient" />
+		    </f:facet>
+		    <h:outputText value="#{item.patient}" /> 
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Notifications" />
+		    </f:facet>
+		    <h:outputText value="#{item.notification}" />  
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Notifications - CID" />
+		    </f:facet>
+		    <h:outputText value="#{item.disease}" />    
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Cause of Death" /> 
+		    </f:facet>
+		    <h:outputText value="#{item.causeOfDeath}" />  
+		  </h:column>
+		  <f:facet name="footer"> 
+		  </f:facet>
+		</h:dataTable>
+	</h:form>
+       
+    </body>
+</html> 

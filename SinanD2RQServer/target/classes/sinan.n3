@@ -1,0 +1,79 @@
+@prefix map: <file:xxx.n3#> .
+@prefix db: <> .
+@prefix vocab: <http://localhost:2020/vocab/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix ntdo: <http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#> .
+@prefix biotop: <http://purl.org/biotop/biotop.owl#> .
+@prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "org.postgresql.Driver";
+	d2rq:jdbcDSN "jdbc:postgresql://localhost/SINANNET";
+	d2rq:username "postgres"; 
+	d2rq:password "postgres";
+	.
+
+map:HealthSurveillanceNotificationAction_tuberculosis rdf:type d2rq:ClassMap;
+		  d2rq:class ntdo:HealthSurveillanceNotificationAction;
+          d2rq:uriPattern "ntdo:HealthSurveillanceNotificationAction@@@tuberculmin.nu_notific@@";
+          d2rq:dataStorage map:database;
+          . 
+map:Tuberculosis rdf:type d2rq:ClassMap;
+          d2rq:class ntdo:Tuberculosis;
+          d2rq:uriPattern "ntdo:Tuberculosis@@@tuberculmin.id_agravo@@";
+          d2rq:dataStorage map:database;
+          .
+map:GeographicLocation_res rdf:type d2rq:ClassMap;
+          d2rq:class ntdo:GeographicLocation;
+          d2rq:uriPattern "ntdo:GeographicLocation@@@tuberculmin.id_municip@@";
+          d2rq:dataStorage map:database;
+          .
+map:GeographicLocation_ocorr rdf:type d2rq:ClassMap;
+          d2rq:class ntdo:GeographicLocation;
+          d2rq:uriPattern "ntdo:GeographicLocation@@@tuberculmin.id_municip@@";
+          d2rq:dataStorage map:database; 
+          .
+map:Human rdf:type d2rq:ClassMap;
+          d2rq:class biotop:Human;
+          d2rq:uriPattern "http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#Human_@@tuberculmin.nm_pacient@@";
+          d2rq:dataStorage map:database; 
+          . 
+map:RightTimeBoundary_nasc rdf:type d2rq:ClassMap;
+          d2rq:class biotop:RightTimeBoundary;
+          d2rq:uriPattern "biotop:RightTimeBoundary@@@tuberculmin.dt_nasc@@";
+          d2rq:dataStorage map:database; 
+          .
+map:HealthSurveillanceNotificationAction_hasParticipant a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:HealthSurveillanceNotificationAction_tuberculosis;
+	      d2rq:refersToClassMap map:Human; 
+          d2rq:property biotop:hasParticipant;
+          . 
+map:HealthSurveillanceNotificationAction_hasLocus a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:HealthSurveillanceNotificationAction_tuberculosis;
+	      d2rq:refersToClassMap map:GeographicLocation_ocorr; 
+          d2rq:property biotop:hasLocus; 
+          .
+map:Tuberculosis_realizationOf a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:HealthSurveillanceNotificationAction_tuberculosis;
+	      d2rq:refersToClassMap map:Tuberculosis; 
+          d2rq:property biotop:realizationOf; 
+          .
+map:Tuberculosis_hasLocus a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:Tuberculosis;
+	      d2rq:refersToClassMap map:Human;  
+          d2rq:property biotop:hasLocus; 
+          .
+map:Human_hasLocus a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:Human;
+	      d2rq:refersToClassMap map:GeographicLocation_res; 
+          d2rq:property biotop:hasLocus;  
+          .  
+map:Human_existsAt a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:HealthSurveillanceNotificationAction_tuberculosis;
+	      d2rq:refersToClassMap map:RightTimeBoundary_nasc; 
+          d2rq:property biotop:existsAt;  
+          .    

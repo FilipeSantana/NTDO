@@ -1,0 +1,933 @@
+<?xml version="1.0"?>
+<!DOCTYPE Ontology [
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+xml:base = "http://www.semanticweb.org/ontologies/2010/10/Ontology58975935.owl"
+xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:xsd = "http://www.w3.org/2001/XMLSchema#"
+xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:xml = "http://www.w3.org/XML/1998/namespace"
+ontologyIRI="http://www.semanticweb.org/ontologies/2010/10/Ontology58975935.owl">
+<Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+<Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+<Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+<Prefix name="wl" IRI="http://www.w3.org/2002/07/owl#"/>
+
+
+
+<Declaration>
+   <Class IRI="#Transfer"/>
+</Declaration>
+<Declaration>
+   <Class IRI="#PathologicalDisposition"/>
+</Declaration>
+<Declaration>
+   <Class IRI="#GeographicEntity"/>
+</Declaration>
+<Declaration>
+   <Class IRI="#Organism"/>
+</Declaration>
+<SubClassOf>
+<Class IRI="#Vertebrate"/>
+<Class IRI="#Organism"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#Protist"/>
+<Class IRI="#Organism"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#Arthropod"/>
+<Class IRI="#Organism"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#PathologicalProcess"/>
+<Class IRI="#Process"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#Transfer"/>
+<Class IRI="#Process"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#PathologicalDisposition"/>
+<Class IRI="#Disposition"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#Organism"/>
+<Class IRI="#MaterialObject"/>
+</SubClassOf>
+<SubClassOf>
+<Class IRI="#GeographicEntity"/>
+<Class IRI="#MaterialObject"/>
+</SubClassOf>
+<Declaration>
+   <Class IRI="#PathologicalProcess"/>
+</Declaration>
+<DisjointClasses>
+  <Class IRI="#Vertebrate"/>
+  <Class IRI="#Protist"/>
+  <Class IRI="#Arthropod"/>
+</DisjointClasses>
+<DisjointClasses>
+  <Class IRI="#Process"/>
+  <Class IRI="#MaterialObject"/>
+  <Class IRI="#Disposition"/>
+</DisjointClasses>
+<DisjointClasses>
+  <Class IRI="#Transfer"/>
+  <Class IRI="#PathologicalProcess"/>
+</DisjointClasses>
+<DisjointClasses>
+  <Class IRI="#GeographicEntity"/>
+  <Class IRI="#Organism"/>
+</DisjointClasses>
+<Declaration>
+  <Class IRI="#BrasilLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#CearaLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#PernambucoLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#RecifeLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#OlindaLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#ZonaDaMataPernambucanaLocation"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#SouthAmericaLocation"/>
+</Declaration>
+<SubClassOf>
+  <Class IRI="#BrasilLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#CearaLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#PernambucoLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#RecifeLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#OlindaLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#ZonaDaMataPernambucanaLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#SouthAmericaLocation"/>
+  <Class IRI="#GeographicEntity"/>
+</SubClassOf>
+<DisjointClasses>
+  <Class IRI="#BrasilLocation"/>
+  <Class IRI="#CearaLocation"/>
+  <Class IRI="#PernambucoLocation"/>
+  <Class IRI="#RecifeLocation"/>
+  <Class IRI="#OlindaLocation"/>
+  <Class IRI="#ZonaDaMataPernambucanaLocation"/>
+  <Class IRI="#SouthAmericaLocation"/>
+</DisjointClasses>
+<DisjointClasses>
+  <Class IRI="#GreenFever"/>
+  <Class IRI="#BlueFever"/>
+  <Class IRI="#PinkFever"/>
+  <Class IRI="#BlackFever"/>
+</DisjointClasses>
+<DisjointClasses>
+  <Class IRI="#GreenFeverDisposition"/>
+  <Class IRI="#BlueFeverDisposition"/>
+  <Class IRI="#PinkFeverDisposition"/>
+  <Class IRI="#BlackFeverDisposition"/>
+</DisjointClasses>
+<Declaration>
+  <Class IRI="#SmallFly"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#FatFly"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#BlackFly"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#UglyFly"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#TinyFly"/>
+</Declaration>
+<SubClassOf>
+  <Class IRI="#SmallFly"/>
+  <Class IRI="#Arthropod"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#FatFly"/>
+  <Class IRI="#Arthropod"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#BlackFly"/>
+  <Class IRI="#Arthropod"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#UglyFly"/>
+  <Class IRI="#Arthropod"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#TinyFly"/>
+  <Class IRI="#Arthropod"/>
+</SubClassOf>
+<DisjointClasses>
+  <Class IRI="#SmallFly"/>
+  <Class IRI="#FatFly"/>
+  <Class IRI="#BlackFly"/>
+  <Class IRI="#UglyFly"/>
+  <Class IRI="#TinyFly"/>
+</DisjointClasses>
+<Declaration>
+  <Class IRI="#Human"/>
+</Declaration>
+<SubClassOf>
+  <Class IRI="#Human"/>
+  <Class IRI="#Vertebrate"/>
+</SubClassOf>
+
+<Declaration>
+  <Class IRI="#CrazyBug"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#LazyBug"/>
+</Declaration>
+<Declaration> 
+  <Class IRI="#NastyBug"/>
+</Declaration>
+<SubClassOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#Protist"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#LazyBug"/>
+  <Class IRI="#Protist"/>
+</SubClassOf>
+<SubClassOf> 
+  <Class IRI="#NastyBug"/>
+  <Class IRI="#Protist"/>
+</SubClassOf>
+<DisjointClasses>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#LazyBug"/>
+  <Class IRI="#NastyBug"/>
+</DisjointClasses>
+<Declaration>
+  <Class IRI="#PathogenTransferByVector"/>
+</Declaration>
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector"/>
+<Class IRI="#Transfer"/>
+</SubClassOf>
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector"/>
+<ObjectUnionOf>
+  <Class IRI="#PathogenTransferByVector_1"/>
+  <Class IRI="#PathogenTransferByVector_2"/>
+  <Class IRI="#PathogenTransferByVector_3"/>
+  <Class IRI="#PathogenTransferByVector_4"/>
+  <Class IRI="#PathogenTransferByVector_5"/>
+</ObjectUnionOf>
+</EquivalentClasses>
+
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector_1"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#Transfer"/>
+  <ObjectSomeValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#SmallFly"/>
+  <Class IRI="#FatFly"/>
+</ObjectUnionOf>
+ </ObjectSomeValuesFrom>
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#BrasilLocation"/>
+
+  </ObjectSomeValuesFrom>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#CrazyBug"/>
+
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#Human"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </EquivalentClasses>
+
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector_2"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#Transfer"/>
+  <ObjectSomeValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#FatFly"/>
+  <Class IRI="#BlackFly"/>
+</ObjectUnionOf>
+ </ObjectSomeValuesFrom>
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+<ObjectUnionOf>
+  <Class IRI="#CearaLocation"/>
+  <Class IRI="#PernambucoLocation"/>
+</ObjectUnionOf>
+  </ObjectSomeValuesFrom>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#LazyBug"/>
+</ObjectUnionOf>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#Human"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </EquivalentClasses>
+
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector_3"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#Transfer"/>
+  <ObjectSomeValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+  <Class IRI="#SmallFly"/>
+
+ </ObjectSomeValuesFrom>
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+<ObjectUnionOf>
+  <Class IRI="#RecifeLocation"/>
+  <Class IRI="#OlindaLocation"/>
+</ObjectUnionOf>
+  </ObjectSomeValuesFrom>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#NastyBug"/>
+</ObjectUnionOf>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#Human"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </EquivalentClasses>
+
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector_4"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#Transfer"/>
+  <ObjectSomeValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#FatFly"/>
+  <Class IRI="#UglyFly"/>
+</ObjectUnionOf>
+ </ObjectSomeValuesFrom>
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#ZonaDaMataPernambucanaLocation"/>
+
+  </ObjectSomeValuesFrom>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#LazyBug"/>
+
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#Human"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </EquivalentClasses>
+
+<EquivalentClasses>
+<Class IRI="#PathogenTransferByVector_5"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#Transfer"/>
+  <ObjectSomeValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+  <Class IRI="#TinyFly"/>
+
+ </ObjectSomeValuesFrom>
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#SouthAmericaLocation"/>
+
+  </ObjectSomeValuesFrom>
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#NastyBug"/>
+
+  <ObjectSomeValuesFrom>
+  <ObjectProperty IRI="#hasLocus"/>
+  <Class IRI="#Human"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+  </EquivalentClasses>
+
+
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector_1"/>
+  <ObjectIntersectionOf>
+  <ObjectAllValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#SmallFly"/>
+  <Class IRI="#FatFly"/>
+</ObjectUnionOf>
+ </ObjectAllValuesFrom>
+ <ObjectAllValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+ <ObjectUnionOf>
+ <ObjectComplementOf>
+ <Class IRI="#GeographicEntity"/>
+</ObjectComplementOf>  <Class IRI="#BrasilLocation"/>
+
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#CrazyBug"/>
+
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#causes"/>
+ <ObjectUnionOf>
+  <Class IRI="#GreenFever"/>
+
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector_2"/>
+  <ObjectIntersectionOf>
+  <ObjectAllValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#FatFly"/>
+  <Class IRI="#BlackFly"/>
+</ObjectUnionOf>
+ </ObjectAllValuesFrom>
+ <ObjectAllValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+ <ObjectUnionOf>
+ <ObjectComplementOf>
+ <Class IRI="#GeographicEntity"/>
+</ObjectComplementOf><ObjectUnionOf>
+  <Class IRI="#CearaLocation"/>
+  <Class IRI="#PernambucoLocation"/>
+</ObjectUnionOf>
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#LazyBug"/>
+</ObjectUnionOf>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#causes"/>
+ <ObjectUnionOf>
+<ObjectUnionOf>
+  <Class IRI="#GreenFever"/>
+  <Class IRI="#BlueFever"/>
+</ObjectUnionOf>
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector_3"/>
+  <ObjectIntersectionOf>
+  <ObjectAllValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+  <Class IRI="#SmallFly"/>
+
+ </ObjectAllValuesFrom>
+ <ObjectAllValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+ <ObjectUnionOf>
+ <ObjectComplementOf>
+ <Class IRI="#GeographicEntity"/>
+</ObjectComplementOf><ObjectUnionOf>
+  <Class IRI="#RecifeLocation"/>
+  <Class IRI="#OlindaLocation"/>
+</ObjectUnionOf>
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#NastyBug"/>
+</ObjectUnionOf>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#causes"/>
+ <ObjectUnionOf>
+<ObjectUnionOf>
+  <Class IRI="#GreenFever"/>
+  <Class IRI="#BlueFever"/>
+</ObjectUnionOf>
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector_4"/>
+  <ObjectIntersectionOf>
+  <ObjectAllValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+<ObjectUnionOf>
+  <Class IRI="#FatFly"/>
+  <Class IRI="#UglyFly"/>
+</ObjectUnionOf>
+ </ObjectAllValuesFrom>
+ <ObjectAllValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+ <ObjectUnionOf>
+ <ObjectComplementOf>
+ <Class IRI="#GeographicEntity"/>
+</ObjectComplementOf>  <Class IRI="#ZonaDaMataPernambucanaLocation"/>
+
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#LazyBug"/>
+
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#causes"/>
+ <ObjectUnionOf>
+  <Class IRI="#PinkFever"/>
+
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#PathogenTransferByVector_5"/>
+  <ObjectIntersectionOf>
+  <ObjectAllValuesFrom> 
+ <ObjectProperty IRI="#hasAgent"/>
+  <Class IRI="#TinyFly"/>
+
+ </ObjectAllValuesFrom>
+ <ObjectAllValuesFrom>
+ <ObjectProperty IRI="#hasLocus"/>
+ <ObjectUnionOf>
+ <ObjectComplementOf>
+ <Class IRI="#GeographicEntity"/>
+</ObjectComplementOf>  <Class IRI="#SouthAmericaLocation"/>
+
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectIntersectionOf>
+  <Class IRI="#NastyBug"/>
+
+  <ObjectAllValuesFrom>
+  <ObjectProperty IRI="#causes"/>
+ <ObjectUnionOf>
+<ObjectUnionOf>
+  <Class IRI="#BlackFever"/>
+  <Class IRI="#GreenFever"/>
+  <Class IRI="#BlueFever"/>
+</ObjectUnionOf>
+ </ObjectUnionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+  </SubClassOf>
+
+<SubClassOf>
+  <ObjectIntersectionOf>
+  <Class IRI="#Human"/>
+
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#locusOf"/>
+  <Class IRI="#CrazyBug"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+<ObjectUnionOf>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#GreenFeverDisposition"/>
+</ObjectSomeValuesFrom>
+</ObjectUnionOf>
+  </SubClassOf>
+
+<SubClassOf>
+  <ObjectIntersectionOf>
+  <Class IRI="#Human"/>
+
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#locusOf"/>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#LazyBug"/>
+</ObjectUnionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+<ObjectUnionOf>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#GreenFeverDisposition"/>
+</ObjectSomeValuesFrom><ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#BlueFeverDisposition"/>
+</ObjectSomeValuesFrom>
+</ObjectUnionOf>
+  </SubClassOf>
+
+<SubClassOf>
+  <ObjectIntersectionOf>
+  <Class IRI="#Human"/>
+
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#locusOf"/>
+<ObjectUnionOf>
+  <Class IRI="#CrazyBug"/>
+  <Class IRI="#NastyBug"/>
+</ObjectUnionOf>
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+<ObjectUnionOf>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#GreenFeverDisposition"/>
+</ObjectSomeValuesFrom><ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#BlueFeverDisposition"/>
+</ObjectSomeValuesFrom>
+</ObjectUnionOf>
+  </SubClassOf>
+
+<SubClassOf>
+  <ObjectIntersectionOf>
+  <Class IRI="#Human"/>
+
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#locusOf"/>
+  <Class IRI="#LazyBug"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+<ObjectUnionOf>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#PinkFeverDisposition"/>
+</ObjectSomeValuesFrom>
+</ObjectUnionOf>
+  </SubClassOf>
+
+<SubClassOf>
+  <ObjectIntersectionOf>
+  <Class IRI="#Human"/>
+
+ <ObjectSomeValuesFrom>
+ <ObjectProperty IRI="#locusOf"/>
+  <Class IRI="#NastyBug"/>
+
+  </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+<ObjectUnionOf>
+<ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#BlackFeverDisposition"/>
+</ObjectSomeValuesFrom><ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#GreenFeverDisposition"/>
+</ObjectSomeValuesFrom><ObjectSomeValuesFrom>
+<ObjectProperty IRI="#bearerOf"/>   <Class IRI="#BlueFeverDisposition"/>
+</ObjectSomeValuesFrom>
+</ObjectUnionOf>
+  </SubClassOf>
+
+<EquivalentClasses>
+  <Class IRI="#GreenFever"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalProcess"/>
+    <ObjectSomeValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#GreenFeverDisposition"/>
+    </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<EquivalentClasses>
+  <Class IRI="#GreenFeverDisposition"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalDisposition"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#hasRealization"/>
+      <Class IRI="#GreenFever"/>
+    </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<SubClassOf>
+  <Class IRI="#GreenFever"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#GreenFeverDisposition"/>
+    </ObjectAllValuesFrom>
+</SubClassOf>
+
+<EquivalentClasses>
+  <Class IRI="#BlueFever"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalProcess"/>
+    <ObjectSomeValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#BlueFeverDisposition"/>
+    </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<EquivalentClasses>
+  <Class IRI="#BlueFeverDisposition"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalDisposition"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#hasRealization"/>
+      <Class IRI="#BlueFever"/>
+    </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<SubClassOf>
+  <Class IRI="#BlueFever"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#BlueFeverDisposition"/>
+    </ObjectAllValuesFrom>
+</SubClassOf>
+
+<EquivalentClasses>
+  <Class IRI="#PinkFever"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalProcess"/>
+    <ObjectSomeValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#PinkFeverDisposition"/>
+    </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<EquivalentClasses>
+  <Class IRI="#PinkFeverDisposition"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalDisposition"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#hasRealization"/>
+      <Class IRI="#PinkFever"/>
+    </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<SubClassOf>
+  <Class IRI="#PinkFever"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#PinkFeverDisposition"/>
+    </ObjectAllValuesFrom>
+</SubClassOf>
+
+<EquivalentClasses>
+  <Class IRI="#BlackFever"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalProcess"/>
+    <ObjectSomeValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#BlackFeverDisposition"/>
+    </ObjectSomeValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<EquivalentClasses>
+  <Class IRI="#BlackFeverDisposition"/>
+  <ObjectIntersectionOf>
+    <Class IRI="#PathologicalDisposition"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#hasRealization"/>
+      <Class IRI="#BlackFever"/>
+    </ObjectAllValuesFrom>
+  </ObjectIntersectionOf>
+</EquivalentClasses>
+
+<SubClassOf>
+  <Class IRI="#BlackFever"/>
+    <ObjectAllValuesFrom>
+      <ObjectProperty IRI="#realizationOf"/>
+      <Class IRI="#BlackFeverDisposition"/>
+    </ObjectAllValuesFrom>
+</SubClassOf>
+
+  <InverseObjectProperties>
+  <ObjectProperty IRI="#causes"/>
+  <ObjectProperty IRI="#causedBy"/>
+  </InverseObjectProperties>
+  <InverseObjectProperties>
+  <ObjectProperty IRI="#hasAgent"/>
+  <ObjectProperty IRI="#agentIn"/>
+  </InverseObjectProperties>
+  <InverseObjectProperties>
+  <ObjectProperty IRI="#hasPatient"/>
+  <ObjectProperty IRI="#patientIn"/>
+  </InverseObjectProperties>
+  <InverseObjectProperties>
+  <ObjectProperty IRI="#bearerOf"/>
+  <ObjectProperty IRI="#inheresIn"/>
+  </InverseObjectProperties>
+  <InverseObjectProperties>
+  <ObjectProperty IRI="#hasLocus"/>
+  <ObjectProperty IRI="#locusOf"/>
+  </InverseObjectProperties>
+  <TransitiveObjectProperty>
+  <ObjectProperty IRI="#locusOf"/>
+  </TransitiveObjectProperty>
+  <TransitiveObjectProperty>
+  <ObjectProperty IRI="#hasLocus"/>
+  </TransitiveObjectProperty>
+<ObjectPropertyDomain>
+        <ObjectProperty IRI="#causes"/>
+        <Class IRI="#MaterialObject"/>
+</ObjectPropertyDomain>
+<ObjectPropertyDomain>
+        <ObjectProperty IRI="#causedBy"/>
+        <Class IRI="#Process"/>
+</ObjectPropertyDomain>
+<ObjectPropertyDomain>
+        <ObjectProperty IRI="#agentIn"/>
+        <Class IRI="#MaterialObject"/>
+</ObjectPropertyDomain>
+<ObjectPropertyDomain>
+        <ObjectProperty IRI="#bearerOf"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPatient"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRealization"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#inheresIn"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locusOf"/>
+            <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#patientIn"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#realizationOf"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agentIn"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#bearerOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocus"/>
+            <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPatient"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRealization"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inheresIn"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#patientIn"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#realizationOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#causes"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#causedBy"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+</Ontology>

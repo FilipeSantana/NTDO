@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY biotop "http://purl.org/biotop/biotop.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ntdo "http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#" >
+    <!ENTITY DengueFever "http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#"
+     xml:base="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:biotop="http://purl.org/biotop/biotop.owl#"
+     xmlns:ntdo="http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#"
+     xmlns:DengueFever="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl">
+        <rdfs:comment>Dengue Fever NTDO Subset</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#bearerOf -->
+
+    <owl:ObjectProperty rdf:about="&biotop;bearerOf"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#causedBy -->
+
+    <owl:ObjectProperty rdf:about="&biotop;causedBy"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#causes -->
+
+    <owl:ObjectProperty rdf:about="&biotop;causes"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasAgent -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasAgent"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasLocus -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasLocus"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasPatient -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasPatient"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasRealization -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasRealization"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#physicalLocationOf -->
+
+    <owl:ObjectProperty rdf:about="&biotop;physicalLocationOf"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#physicallyLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="&biotop;physicallyLocatedIn"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#realizationOf -->
+
+    <owl:ObjectProperty rdf:about="&biotop;realizationOf"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#spatiallyRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="&biotop;spatiallyRelatedTo"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#geographicallyLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="&ntdo;geographicallyLocatedIn">
+        <rdfs:domain rdf:resource="&biotop;SpatialRegion"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;spatiallyRelatedTo"/>
+        <owl:inverseOf rdf:resource="&ntdo;hasGeographicLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#hasGeographicLocation -->
+
+    <owl:ObjectProperty rdf:about="&ntdo;hasGeographicLocation">
+        <rdfs:range rdf:resource="&biotop;SpatialRegion"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;spatiallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Human -->
+
+    <owl:Class rdf:about="&biotop;Human"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Insect -->
+
+    <owl:Class rdf:about="&biotop;Insect"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalDisposition -->
+
+    <owl:Class rdf:about="&biotop;PathologicalDisposition"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalProcess -->
+
+    <owl:Class rdf:about="&biotop;PathologicalProcess"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Process -->
+
+    <owl:Class rdf:about="&biotop;Process"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#SpatialRegion -->
+
+    <owl:Class rdf:about="&biotop;SpatialRegion"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#TwoDimensionalPhysicalEntity -->
+
+    <owl:Class rdf:about="&biotop;TwoDimensionalPhysicalEntity"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Virus -->
+
+    <owl:Class rdf:about="&biotop;Virus"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#AedesAegypti -->
+
+    <owl:Class rdf:about="&DengueFever;AedesAegypti">
+        <rdfs:subClassOf rdf:resource="&biotop;Insect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DEN1 -->
+
+    <owl:Class rdf:about="&DengueFever;DEN1">
+        <rdfs:subClassOf rdf:resource="&DengueFever;DengueVirus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DEN2 -->
+
+    <owl:Class rdf:about="&DengueFever;DEN2">
+        <rdfs:subClassOf rdf:resource="&DengueFever;DengueVirus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DEN3 -->
+
+    <owl:Class rdf:about="&DengueFever;DEN3">
+        <rdfs:subClassOf rdf:resource="&DengueFever;DengueVirus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DEN4 -->
+
+    <owl:Class rdf:about="&DengueFever;DEN4">
+        <rdfs:subClassOf rdf:resource="&DengueFever;DengueVirus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DengueFever -->
+
+    <owl:Class rdf:about="&DengueFever;DengueFever">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&biotop;PathologicalProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;causedBy"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&DengueFever;DEN1"/>
+                                    <rdf:Description rdf:about="&DengueFever;DEN2"/>
+                                    <rdf:Description rdf:about="&DengueFever;DEN3"/>
+                                    <rdf:Description rdf:about="&DengueFever;DEN4"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasLocus"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;Human"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;realizationOf"/>
+                        <owl:someValuesFrom rdf:resource="&DengueFever;DengueFeverDisposition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&biotop;PathologicalProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;realizationOf"/>
+                <owl:allValuesFrom rdf:resource="&DengueFever;DengueFeverDisposition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DengueFeverDisposition -->
+
+    <owl:Class rdf:about="&DengueFever;DengueFeverDisposition">
+        <rdfs:subClassOf rdf:resource="&biotop;PathologicalDisposition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;hasRealization"/>
+                <owl:allValuesFrom rdf:resource="&DengueFever;DengueFever"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DengueVirus -->
+
+    <owl:Class rdf:about="&DengueFever;DengueVirus">
+        <rdfs:subClassOf rdf:resource="&biotop;Virus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl#DengueVirusTransferByVector -->
+
+    <owl:Class rdf:about="&DengueFever;DengueVirusTransferByVector">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ntdo;Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="&DengueFever;AedesAegypti"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ntdo;hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;SpatialRegion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&DengueFever;DEN1"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN2"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN3"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN4"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&biotop;physicallyLocatedIn"/>
+                                        <owl:someValuesFrom rdf:resource="&biotop;Human"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&ntdo;Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="&DengueFever;AedesAegypti"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&DengueFever;DEN1"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN2"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN3"/>
+                                            <rdf:Description rdf:about="&DengueFever;DEN4"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&biotop;causes"/>
+                                        <owl:allValuesFrom rdf:resource="&DengueFever;DengueFever"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ntdo;hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="&biotop;SpatialRegion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#Transfer -->
+
+    <owl:Class rdf:about="&ntdo;Transfer">
+        <rdfs:subClassOf rdf:resource="&biotop;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;bearerOf"/>
+                <owl:someValuesFrom rdf:resource="&DengueFever;DengueFeverDisposition"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&biotop;Human"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;physicalLocationOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&DengueFever;DEN1"/>
+                            <rdf:Description rdf:about="&DengueFever;DEN2"/>
+                            <rdf:Description rdf:about="&DengueFever;DEN3"/>
+                            <rdf:Description rdf:about="&DengueFever;DEN4"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:intersectionOf>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&DengueFever;DEN1"/>
+            <rdf:Description rdf:about="&DengueFever;DEN2"/>
+            <rdf:Description rdf:about="&DengueFever;DEN3"/>
+            <rdf:Description rdf:about="&DengueFever;DEN4"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:cc="http://politec.com.br/componentes"
+	xml:lang="pt-br" lang="pt-br">
+    <head>
+        <title>SINAN/SIM SPARQL Query Editor</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.ui.all.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/> 
+    </head>
+    <body>
+    <h2>
+		<img src="images/seta_cidadao.gif" alt="" />SINAN/SIM SPARQL Query Editor 
+	</h2> 
+	<br/> 
+	<br/>
+	<h:form id="form1">
+       <h:inputTextarea id="comments" value="#{clienteMB.message}" cols="100" rows="20" />
+       <br/>
+       <h:commandButton id="button1" value="Submit Query" action="#{clienteMB.executeQuery}" />
+       <br/><br/><br/>
+       
+       <h:dataTable id="table1" value="#{clienteMB.resultados}" var="item">
+		  <f:facet name="header">
+		    <h:outputText value="Results" />
+		  </f:facet>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Patient" />
+		    </f:facet>
+		    <h:outputText value="#{item.patient}" /> 
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Notifications" />
+		    </f:facet>
+		    <h:outputText value="#{item.notification}" />  
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Notifications - CID" />
+		    </f:facet>
+		    <h:outputText value="#{item.disease}" />    
+		  </h:column>
+		  <h:column>
+		    <f:facet name="header">
+		      <h:outputText value="Cause of Death" /> 
+		    </f:facet>
+		    <h:outputText value="#{item.causeOfDeath}" />  
+		  </h:column>
+		  <f:facet name="footer"> 
+		  </f:facet>
+	</h:dataTable>
+	</h:form>
+       
+    </body>
+</html> 

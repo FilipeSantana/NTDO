@@ -1,0 +1,1556 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY RCC8GeoRep "http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#"
+     xml:base="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl"
+     xmlns:RCC8GeoRep="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#connectsWith -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;connectsWith">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#disconnectedFrom -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;disconnectedFrom">
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;discreteFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#discreteFrom -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;discreteFrom"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#equalTo -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;equalTo">
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;overlaps"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#externallyConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;externallyConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;connectsWith"/>
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;discreteFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#inverseNonTangencialProperPart -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;inverseNonTangencialProperPart">
+        <owl:inverseOf rdf:resource="&RCC8GeoRep;nonTangentialProperPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#inverseTangencialProperPart -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;inverseTangencialProperPart">
+        <owl:inverseOf rdf:resource="&RCC8GeoRep;tangentialProperPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#nonTangentialProperPartOf -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;nonTangentialProperPartOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;properPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#overlaps -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;overlaps">
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;connectsWith"/>
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;spatiallyRelated"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#partOf -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;partOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#partiallyOverlaps -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;partiallyOverlaps">
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;overlaps"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#properPartOf -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;properPartOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;overlaps"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#spatiallyRelated -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;spatiallyRelated"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#tangentialProperPartOf -->
+
+    <owl:ObjectProperty rdf:about="&RCC8GeoRep;tangentialProperPartOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&RCC8GeoRep;properPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty">
+        <rdfs:comment xml:lang="en">Relations defined based in:
+
+Rolf Grütter, Bettina Bauer-Messmer: Combining OWL with RCC for Spatioterminological Reasoning on Environmental Data. OWLED 2007</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SouthAmericaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilMidwestLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilMidwestLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilNorthLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilNorthLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilNortheastLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilNortheastLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilSouthLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilSouthLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#BrazilSoutheastLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;BrazilSoutheastLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CentralAmericaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CentralAmericaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;ContinentAmerica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#City -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;City">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;Microregion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityAracoiabaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityAracoiabaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionItamaracaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityCaboDeSantoAgostinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityCaboDeSantoAgostinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionSuapeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityCamaragibeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityCamaragibeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityFernandoDeNoronhaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityFernandoDeNoronhaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionFernandoDeNoronhaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityIgarassuLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityIgarassuLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionItamaracaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityIlhaDeItamaracaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityIlhaDeItamaracaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionItamaracaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityIpojucaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityIpojucaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionSuapeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityItapissumaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityItapissumaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionItamaracaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityJaboataoDosGuararapesLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityJaboataoDosGuararapesLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityMorenoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityMorenoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityOlindaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityOlindaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityPaulistaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityPaulistaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CityRecifeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CityRecifeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#CitySaoLourencoDaMataLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;CitySaoLourencoDaMataLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;MicroregionRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Continent -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Continent"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#ContinentAfrica -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;ContinentAfrica">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;GeographicLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#ContinentAmerica -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;ContinentAmerica">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;GeographicLocation"/>
+        <owl:disjointWith rdf:resource="&RCC8GeoRep;ContinentAsia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#ContinentAsia -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;ContinentAsia">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;GeographicLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#ContinentEurope -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;ContinentEurope">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;GeographicLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#ContinentOceania -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;ContinentOceania">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;GeographicLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Country -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Country">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;Continent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#District -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;District">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;City"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictAracoiabaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictAracoiabaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityAracoiabaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictBonancaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictBonancaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityMorenoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictCaboDeSantoAgostinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictCaboDeSantoAgostinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityCaboDeSantoAgostinhoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictCamaragibeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictCamaragibeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityCamaragibeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictCamelaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictCamelaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIpojucaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictCavaleiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictCavaleiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityJaboataoDosGuararapesLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictIlhaDeItamaracaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictIlhaDeItamaracaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIlhaDeItamaracaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictIpojucaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictIpojucaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIpojucaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictItapissulaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictItapissulaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityItapissumaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictJaboataoDosGuararapesLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictJaboataoDosGuararapesLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityJaboataoDosGuararapesLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictJaboataoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictJaboataoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityJaboataoDosGuararapesLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictJucaralLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictJucaralLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityCaboDeSantoAgostinhoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictMorenoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictMorenoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityMorenoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictNossaSenhoraDaLuzLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictNossaSenhoraDaLuzLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CitySaoLourencoDaMataLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictNossaSenhoraDoOLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictNossaSenhoraDoOLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIpojucaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictNovaCruzLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictNovaCruzLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIgarassuLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictOlindaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictOlindaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityOlindaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictPaulistaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictPaulistaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityPaulistaLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictPonteDosCarvalhosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictPonteDosCarvalhosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityCaboDeSantoAgostinhoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictRecifeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictRecifeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictSantoAgostinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictSantoAgostinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityCaboDeSantoAgostinhoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictSaoLourencoDaMataLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictSaoLourencoDaMataLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CitySaoLourencoDaMataLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#DistrictTresLadeirasLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;DistrictTresLadeirasLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;CityIgarassuLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#GeographicLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;GeographicLocation"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Meso -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Meso">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Microregion -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Microregion">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;Meso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#MicroregionFernandoDeNoronhaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;MicroregionFernandoDeNoronhaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;RegiaoMetropolitanaDoRecifeMesoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#MicroregionItamaracaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;MicroregionItamaracaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;RegiaoMetropolitanaDoRecifeMesoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#MicroregionRecifeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;MicroregionRecifeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;RegiaoMetropolitanaDoRecifeMesoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#MicroregionSuapeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;MicroregionSuapeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;RegiaoMetropolitanaDoRecifeMesoLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Neighborhood -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Neighborhood">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubDistrict"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAflitosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAflitosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAfogadosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAfogadosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAguaFriaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAguaFriaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAltoDoManduLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAltoDoManduLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAltoJoseBonifacioLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAltoJoseBonifacioLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAltoJosedoPinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAltoJosedoPinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAltoSantaTerezinhaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAltoSantaTerezinhaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodApipucosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodApipucosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodAreiasLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodAreiasLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodArrudaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodArrudaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBarroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBarroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBeberibeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBeberibeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBoaViagemLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBoaViagemLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBoaVistaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBoaVistaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBomba_do_HemetérioLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBomba_do_HemetérioLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBongiLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBongiLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBrasiliaTeimosaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBrasiliaTeimosaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBrejoDaGuabirabaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBrejoDaGuabirabaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodBrejoDoBeberibeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodBrejoDoBeberibeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCabangaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCabangaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCacoteLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCacoteLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCajueiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCajueiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCampinaDoBarretoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCampinaDoBarretoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCampo_GrandeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCampo_GrandeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCasaAmarelaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCasaAmarelaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCasaForteLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCasaForteLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCaxangaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCaxangaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCidadeUniversitariaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCidadeUniversitariaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCoelhosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCoelhosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCohabLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCohabLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCoqueiralLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCoqueiralLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCordeiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCordeiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCorregoDoJenipapoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCorregoDoJenipapoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodCuradoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodCuradoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodDerbyLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodDerbyLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodDoisIrmaosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodDoisIrmaosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodDoisUnidosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodDoisUnidosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodEncruzilhadaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodEncruzilhadaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodEngenhoDoMeioLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodEngenhoDoMeioLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodEspinheiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodEspinheiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodEstanciaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodEstanciaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodFundaoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodFundaoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodGracasLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodGracasLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodGuabirabaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodGuabirabaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodHipodromoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodHipodromoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIburaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIburaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIlhaDoLeiteLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIlhaDoLeiteLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIlhaDoRetiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIlhaDoRetiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIlhaJoanaBezerraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIlhaJoanaBezerraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodImbiribeiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodImbiribeiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIpsepLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIpsepLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodIputingaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodIputingaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodJaqueiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodJaqueiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodJardimSaoPauloLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodJardimSaoPauloLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodJiquiaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodJiquiaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodJordaoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodJordaoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodLinhaDoTiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodLinhaDoTiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMacaxeiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMacaxeiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMadalenaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMadalenaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMangabeiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMangabeiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMangueiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMangueiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMonteiroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMonteiroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMorroDaConceicaoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMorroDaConceicaoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodMustardinhaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodMustardinhaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodNovaDescobertaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodNovaDescobertaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPaissanduLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPaissanduLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodParnamirimLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodParnamirimLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPassarinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPassarinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPauFerroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPauFerroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPeixinhosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPeixinhosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPinaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPinaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA6Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPocoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPocoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPontoDeParadaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPontoDeParadaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPortoDaMadeiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPortoDaMadeiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodPradoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodPradoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodRecifeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodRecifeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodRosarinhoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodRosarinhoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSanMartinLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSanMartinLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSanchoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSanchoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSantanaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSantanaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSantoAmaroLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSantoAmaroLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSantoAntonioLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSantoAntonioLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSaoJoseLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSaoJoseLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSitioDosPintosLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSitioDosPintosLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodSoledadeLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodSoledadeLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA1Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTamarineiraLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTamarineiraLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTejipioLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTejipioLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTorreLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTorreLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTorreaoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTorreaoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA2Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTorroesLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTorroesLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodTotoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodTotoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA5Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodVarzeaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodVarzeaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodVascoDaGamaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodVascoDaGamaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA3Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NeighborhoodZumbiLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NeighborhoodZumbiLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;SubdistrictRPA4Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#NorthAmericaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;NorthAmericaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;ContinentAmerica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#PernambucoStateLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;PernambucoStateLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;BrazilNortheastLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#RegiaoMetropolitanaDoRecifeMesoLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;RegiaoMetropolitanaDoRecifeMesoLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;PernambucoStateLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#Region -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;Region">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SouthAmericaLocation -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SouthAmericaLocation">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;ContinentAmerica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#State -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;State">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubDistrict -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubDistrict">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;District"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA1Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA1Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA2Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA2Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA3Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA3Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA4Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA4Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA5Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA5Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl#SubdistrictRPA6Location -->
+
+    <owl:Class rdf:about="&RCC8GeoRep;SubdistrictRPA6Location">
+        <rdfs:subClassOf rdf:resource="&RCC8GeoRep;DistrictRecifeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&RCC8GeoRep;ContinentAfrica"/>
+            <rdf:Description rdf:about="&RCC8GeoRep;ContinentAmerica"/>
+            <rdf:Description rdf:about="&RCC8GeoRep;ContinentEurope"/>
+            <rdf:Description rdf:about="&RCC8GeoRep;ContinentOceania"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1799) http://owlapi.sourceforge.net -->
+

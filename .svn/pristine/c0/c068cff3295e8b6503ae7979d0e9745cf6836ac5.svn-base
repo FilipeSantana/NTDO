@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY biotop "http://purl.org/biotop/biotop.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ntdo "http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#" >
+    <!ENTITY InjuryAndDeath "http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#"
+     xml:base="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:biotop="http://purl.org/biotop/biotop.owl#"
+     xmlns:ntdo="http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#"
+     xmlns:InjuryAndDeath="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#causedBy -->
+
+    <owl:ObjectProperty rdf:about="&biotop;causedBy"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasParticipant"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasPatient -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasPatient">
+        <rdfs:subPropertyOf rdf:resource="&biotop;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasProcessualPart -->
+
+    <owl:ObjectProperty rdf:about="&biotop;hasProcessualPart"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#patientIn -->
+
+    <owl:ObjectProperty rdf:about="&biotop;patientIn"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#precededBy -->
+
+    <owl:ObjectProperty rdf:about="&biotop;precededBy"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#precedes -->
+
+    <owl:ObjectProperty rdf:about="&biotop;precedes"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#deathPatientOf -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;deathPatientOf">
+        <rdfs:subPropertyOf rdf:resource="&biotop;patientIn"/>
+        <owl:inverseOf rdf:resource="&InjuryAndDeath;hasDeathPatient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#existsAt -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;existsAt">
+        <rdfs:domain rdf:resource="&biotop;MaterialObject"/>
+        <rdfs:range rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasConvalescentPatient -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasConvalescentPatient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&biotop;LivingOrganism"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;hasPatient"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;BiologicalDeathProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasDeathPatient -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasDeathPatient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&biotop;LivingOrganism"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;hasPatient"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;DeathEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasInjuriedPatient -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasInjuriedPatient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&biotop;LivingOrganism"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;hasPatient"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;InjuryEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasInstant -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasInstant">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&InjuryAndDeath;RightTimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasLeftTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasLeftTimeBoundary">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&InjuryAndDeath;LeftTimeBoundary"/>
+        <rdfs:subPropertyOf rdf:resource="&InjuryAndDeath;hasTimeBoundary"/>
+        <owl:inverseOf rdf:resource="&InjuryAndDeath;leftTimeBoundaryOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasPrimaryDeathCause -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasPrimaryDeathCause">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&biotop;Condition"/>
+        <rdfs:subPropertyOf rdf:resource="&biotop;causedBy"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;DeathEvent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasRightTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasRightTimeBoundary">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&InjuryAndDeath;RightTimeBoundary"/>
+        <rdfs:subPropertyOf rdf:resource="&InjuryAndDeath;hasTimeBoundary"/>
+        <owl:inverseOf rdf:resource="&InjuryAndDeath;rightTimeBoundaryOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#hasTimeBoundary -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;hasTimeBoundary">
+        <rdfs:range rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#leftTimeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;leftTimeBoundaryOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;LeftTimeBoundary"/>
+        <rdfs:subPropertyOf rdf:resource="&InjuryAndDeath;timeBoundaryOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#projectsTo -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;projectsTo">
+        <rdfs:domain rdf:resource="&biotop;Process"/>
+        <rdfs:range rdf:resource="&InjuryAndDeath;Chronoid"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#rightTimeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;rightTimeBoundaryOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&InjuryAndDeath;RightTimeBoundary"/>
+        <rdfs:subPropertyOf rdf:resource="&InjuryAndDeath;timeBoundaryOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#timeBoundaryOf -->
+
+    <owl:ObjectProperty rdf:about="&InjuryAndDeath;timeBoundaryOf">
+        <rdfs:domain rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#hasGeographicLocation -->
+
+    <owl:ObjectProperty rdf:about="&ntdo;hasGeographicLocation">
+        <rdfs:range rdf:resource="&biotop;SpatialRegion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#BiologicalProcessualEntity -->
+
+    <owl:Class rdf:about="&biotop;BiologicalProcessualEntity">
+        <rdfs:subClassOf rdf:resource="&biotop;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Condition -->
+
+    <owl:Class rdf:about="&biotop;Condition"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#InstantaneousProcess -->
+
+    <owl:Class rdf:about="&biotop;InstantaneousProcess"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#LivingOrganism -->
+
+    <owl:Class rdf:about="&biotop;LivingOrganism"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#MaterialObject -->
+
+    <owl:Class rdf:about="&biotop;MaterialObject"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalCondition -->
+
+    <owl:Class rdf:about="&biotop;PathologicalCondition"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalProcess -->
+
+    <owl:Class rdf:about="&biotop;PathologicalProcess"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Process -->
+
+    <owl:Class rdf:about="&biotop;Process"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#SpatialRegion -->
+
+    <owl:Class rdf:about="&biotop;SpatialRegion"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Time -->
+
+    <owl:Class rdf:about="&biotop;Time"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#TwoDimensionalPhysicalEntity -->
+
+    <owl:Class rdf:about="&biotop;TwoDimensionalPhysicalEntity"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#BiologicalDeathProcess -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;BiologicalDeathProcess">
+        <rdfs:subClassOf rdf:resource="&biotop;BiologicalProcessualEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;precedes"/>
+                <owl:allValuesFrom rdf:resource="&InjuryAndDeath;DeathEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#BirthEvent -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;BirthEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&biotop;InstantaneousProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasPatient"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;LivingOrganism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasProcessualPart"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;BiologicalProcessualEntity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ntdo;hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;SpatialRegion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;hasPatient"/>
+                        <owl:allValuesFrom rdf:resource="&biotop;LivingOrganism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ntdo;hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="&biotop;SpatialRegion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#Chronoid -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;Chronoid">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&InjuryAndDeath;hasLeftTimeBoundary"/>
+                <owl:onClass rdf:resource="&InjuryAndDeath;LeftTimeBoundary"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&InjuryAndDeath;hasRightTimeBoundary"/>
+                <owl:onClass rdf:resource="&InjuryAndDeath;RightTimeBoundary"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#DeathEvent -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;DeathEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&biotop;InstantaneousProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&biotop;precededBy"/>
+                        <owl:someValuesFrom rdf:resource="&InjuryAndDeath;BiologicalDeathProcess"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&InjuryAndDeath;hasDeathPatient"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;LivingOrganism"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&ntdo;hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="&biotop;SpatialRegion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&InjuryAndDeath;hasPrimaryDeathCause"/>
+                        <owl:onClass rdf:resource="&biotop;Process"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&biotop;precededBy"/>
+                <owl:allValuesFrom rdf:resource="&InjuryAndDeath;BiologicalDeathProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#InjuryEvent -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;InjuryEvent"/>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#LeftTimeBoundary -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;LeftTimeBoundary">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&InjuryAndDeath;TimeBoundary"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&InjuryAndDeath;leftTimeBoundaryOf"/>
+                        <owl:someValuesFrom rdf:resource="&InjuryAndDeath;Chronoid"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+        <owl:disjointWith rdf:resource="&InjuryAndDeath;RightTimeBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#RightTimeBoundary -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;RightTimeBoundary">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&InjuryAndDeath;TimeBoundary"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&InjuryAndDeath;rightTimeBoundaryOf"/>
+                        <owl:someValuesFrom rdf:resource="&InjuryAndDeath;Chronoid"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&InjuryAndDeath;TimeBoundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl#TimeBoundary -->
+
+    <owl:Class rdf:about="&InjuryAndDeath;TimeBoundary">
+        <rdfs:subClassOf rdf:resource="&biotop;Time"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,43 @@
+@prefix map: <file:xxx.n3#> .
+@prefix db: <> .
+@prefix vocab: <http://localhost:2020/vocab/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix ntdo: <http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#> .
+@prefix biotop: <http://purl.org/biotop/biotop.owl#> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "org.postgresql.Driver";
+	d2rq:jdbcDSN "jdbc:postgresql://localhost/SIM";
+	d2rq:username "postgres";
+	d2rq:password "postgres";
+	. 
+
+map:DeathProcess rdf:type d2rq:ClassMap;
+		  d2rq:class ntdo:DeathProcess;
+          d2rq:uriPattern "ntdo:DeathProcess@@@obitosmin.numerodo@@";
+          d2rq:dataStorage map:database;
+          . 
+map:PathologicalDisposition rdf:type d2rq:ClassMap;
+          d2rq:class biotop:PathologicalDisposition;
+          d2rq:uriPattern "biotop:PathologicalDisposition@@@obitosmin.causabas@@";
+          d2rq:dataStorage map:database;
+          .
+map:Human rdf:type d2rq:ClassMap;
+          d2rq:class biotop:Human;
+          d2rq:uriPattern "http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#Human_@@obitosmin.nome@@"; 
+          d2rq:dataStorage map:database; 
+          .      
+map:Human_hasParticipant a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:DeathProcess;
+	      d2rq:refersToClassMap map:Human; 
+          d2rq:property biotop:hasParticipant;  
+          . 
+map:PathologicalDisposition_realizationOf a d2rq:PropertyBridge;
+	      d2rq:belongsToClassMap map:DeathProcess;
+	      d2rq:refersToClassMap map:PathologicalDisposition; 
+          d2rq:property biotop:realizationOf;  
+          . 

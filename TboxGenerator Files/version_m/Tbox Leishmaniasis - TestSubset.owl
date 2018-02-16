@@ -1,0 +1,893 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2010/10/Ontology802623987.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2010/10/Ontology802623987.owl">
+    <Prefix name="wl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#GeographicEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GuadeloupeLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaChagasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaMexicana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaPeruviana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaSp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaPeruensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaWhitmani"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MexicoLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParaguayLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PathogenTransferByVector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PathologicalDisposition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PathologicalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeruLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transfer"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasRealization"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasRealization"/>
+                <Class IRI="#CutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasRealization"/>
+                <Class IRI="#MucocutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector"/>
+        <ObjectUnionOf>
+            <Class IRI="#PathogenTransferByVector_1"/>
+            <Class IRI="#PathogenTransferByVector_2"/>
+            <Class IRI="#PathogenTransferByVector_3"/>
+            <Class IRI="#PathogenTransferByVector_4"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#GuadeloupeLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocus"/>
+                        <Class IRI="#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_2"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                    <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#MexicoLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                        <Class IRI="#LeishmaniaSp"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocus"/>
+                        <Class IRI="#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_3"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaFlaviscutellata"/>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#ParaguayLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaAmazonensis"/>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocus"/>
+                        <Class IRI="#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_4"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaPeruensis"/>
+                    <Class IRI="#LutzomyiaVerrucarum"/>
+                    <Class IRI="#LutzomyiaWhitmani"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#PeruLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaBraziliensis"/>
+                        <Class IRI="#LeishmaniaPeruviana"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#hasLocus"/>
+                        <Class IRI="#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VisceralLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasRealization"/>
+                <Class IRI="#VisceralLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#Vertebrate"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#realizationOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arthropod"/>
+        <Class IRI="#Organism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#Vertebrate"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#realizationOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeographicEntity"/>
+        <Class IRI="#MaterialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GuadeloupeLocation"/>
+        <Class IRI="#GeographicEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human"/>
+        <Class IRI="#Vertebrate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaChagasi"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaMexicana"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaPeruviana"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaSp"/>
+        <Class IRI="#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaPeruensis"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaWhitmani"/>
+        <Class IRI="#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MexicoLocation"/>
+        <Class IRI="#GeographicEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MucocutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#Vertebrate"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#realizationOf"/>
+                <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organism"/>
+        <Class IRI="#MaterialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParaguayLocation"/>
+        <Class IRI="#GeographicEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector"/>
+        <Class IRI="#Transfer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_1"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#GuadeloupeLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#GeographicEntity"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="#causes"/>
+                        <Class IRI="#VisceralLeishmaniasis"/>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_2"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                    <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#MexicoLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#GeographicEntity"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                        <Class IRI="#LeishmaniaSp"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#VisceralLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_3"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaFlaviscutellata"/>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ParaguayLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#GeographicEntity"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaAmazonensis"/>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#VisceralLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_4"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaPeruensis"/>
+                    <Class IRI="#LutzomyiaVerrucarum"/>
+                    <Class IRI="#LutzomyiaWhitmani"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#PeruLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="#GeographicEntity"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaBraziliensis"/>
+                        <Class IRI="#LeishmaniaPeruviana"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#MucocutaneousLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathologicalDisposition"/>
+        <Class IRI="#Disposition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathologicalProcess"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeruLocation"/>
+        <Class IRI="#GeographicEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Protist"/>
+        <Class IRI="#Organism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transfer"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vertebrate"/>
+        <Class IRI="#Organism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisceralLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasLocus"/>
+                <Class IRI="#Vertebrate"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#realizationOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#causedBy"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#locusOf"/>
+                <Class IRI="#LeishmaniaChagasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#bearerOf"/>
+            <Class IRI="#VisceralLeishmaniasisDisposition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#bearerOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+        <Class IRI="#CutaneousLeishmaniasis"/>
+        <Class IRI="#MucocutaneousLeishmaniasis"/>
+        <Class IRI="#VisceralLeishmaniasis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#VisceralLeishmaniasisDisposition"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Arthropod"/>
+        <Class IRI="#Protist"/>
+        <Class IRI="#Vertebrate"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Disposition"/>
+        <Class IRI="#MaterialObject"/>
+        <Class IRI="#Process"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GeographicEntity"/>
+        <Class IRI="#Organism"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GuadeloupeLocation"/>
+        <Class IRI="#MexicoLocation"/>
+        <Class IRI="#ParaguayLocation"/>
+        <Class IRI="#PeruLocation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+        <Class IRI="#LeishmaniaChagasi"/>
+        <Class IRI="#LeishmaniaMexicana"/>
+        <Class IRI="#LeishmaniaPeruviana"/>
+        <Class IRI="#LeishmaniaSp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+        <Class IRI="#LutzomyiaPeruensis"/>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+        <Class IRI="#LutzomyiaWhitmani"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PathologicalProcess"/>
+        <Class IRI="#Transfer"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#agentIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#inheresIn"/>
+        <ObjectProperty IRI="#bearerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#causes"/>
+        <ObjectProperty IRI="#causedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLocus"/>
+        <ObjectProperty IRI="#locusOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#patientIn"/>
+        <ObjectProperty IRI="#hasPatient"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasLocus"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#locusOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#agentIn"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#bearerOf"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#causedBy"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#causes"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPatient"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRealization"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#inheresIn"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locusOf"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#patientIn"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#realizationOf"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agentIn"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#bearerOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#causedBy"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#causes"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgent"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocus"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPatient"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRealization"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inheresIn"/>
+        <Class IRI="#MaterialObject"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#patientIn"/>
+        <Class IRI="#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#realizationOf"/>
+        <Class IRI="#Disposition"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

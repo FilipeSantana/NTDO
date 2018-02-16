@@ -1,0 +1,833 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl">
+    <Prefix name="wl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElSalvadorLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GuadeloupeLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaChagasi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaMexicana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaPeruviana"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeishmaniaSp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaPeruensis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LutzomyiaWhitmani"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MexicoLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParaguayLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PathogenTransferByVector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeruLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transfer"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasRealization"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasRealization"/>
+                <Class IRI="#CutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MucocutaneousLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasRealization"/>
+                <Class IRI="#MucocutaneousLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector"/>
+        <ObjectUnionOf>
+            <Class IRI="#PathogenTransferByVector_1"/>
+            <Class IRI="#PathogenTransferByVector_2"/>
+            <Class IRI="#PathogenTransferByVector_3"/>
+            <Class IRI="#PathogenTransferByVector_4"/>
+            <Class IRI="#PathogenTransferByVector_5"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <Class IRI="#ElSalvadorLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_2"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <Class IRI="#GuadeloupeLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_3"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                    <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <Class IRI="#MexicoLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                        <Class IRI="#LeishmaniaSp"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_4"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaFlaviscutellata"/>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <Class IRI="#ParaguayLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaAmazonensis"/>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PathogenTransferByVector_5"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Transfer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaPeruensis"/>
+                    <Class IRI="#LutzomyiaVerrucarum"/>
+                    <Class IRI="#LutzomyiaWhitmani"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <Class IRI="#PeruLocation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaBraziliensis"/>
+                        <Class IRI="#LeishmaniaPeruviana"/>
+                    </ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VisceralLeishmaniasis"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VisceralLeishmaniasisDisposition"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasRealization"/>
+                <Class IRI="#VisceralLeishmaniasis"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Vertebrate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#MaterialEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Disposition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Vertebrate"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#LivingOrganism"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CutaneousLeishmaniasis"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElSalvadorLocation"/>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GuadeloupeLocation"/>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaChagasi"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaMexicana"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaPeruviana"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeishmaniaSp"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaPeruensis"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LutzomyiaWhitmani"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MexicoLocation"/>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MucocutaneousLeishmaniasis"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParaguayLocation"/>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector"/>
+        <Class IRI="#Transfer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_1"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ElSalvadorLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#VisceralLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_2"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <Class IRI="#LutzomyiaLongipalpis"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#GuadeloupeLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+                        <Class IRI="#VisceralLeishmaniasis"/>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_3"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                    <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#MexicoLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                        <Class IRI="#LeishmaniaMexicana"/>
+                        <Class IRI="#LeishmaniaSp"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#VisceralLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_4"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaFlaviscutellata"/>
+                    <Class IRI="#LutzomyiaLongipalpis"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#ParaguayLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaAmazonensis"/>
+                        <Class IRI="#LeishmaniaChagasi"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#VisceralLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PathogenTransferByVector_5"/>
+        <ObjectIntersectionOf>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LutzomyiaPeruensis"/>
+                    <Class IRI="#LutzomyiaVerrucarum"/>
+                    <Class IRI="#LutzomyiaWhitmani"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+                <ObjectUnionOf>
+                    <Class IRI="#PeruLocation"/>
+                    <ObjectComplementOf>
+                        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+                    </ObjectComplementOf>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+                <ObjectIntersectionOf>
+                    <ObjectUnionOf>
+                        <Class IRI="#LeishmaniaBraziliensis"/>
+                        <Class IRI="#LeishmaniaPeruviana"/>
+                    </ObjectUnionOf>
+                    <ObjectAllValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#CutaneousLeishmaniasis"/>
+                            <Class IRI="#MucocutaneousLeishmaniasis"/>
+                        </ObjectUnionOf>
+                    </ObjectAllValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeruLocation"/>
+        <Class IRI="http://www.cin.ufpe.br/~ntdo/ntdo.owl#GeographicLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transfer"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisceralLeishmaniasis"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+            <Class IRI="#VisceralLeishmaniasisDisposition"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+                <Class IRI="#LeishmaniaChagasi"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+            <Class IRI="#VisceralLeishmaniasisDisposition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaAmazonensis"/>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaBraziliensis"/>
+                    <Class IRI="#LeishmaniaPeruviana"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.org/biotop/biotop.owl#Human"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LeishmaniaChagasi"/>
+                    <Class IRI="#LeishmaniaMexicana"/>
+                    <Class IRI="#LeishmaniaSp"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+                <Class IRI="#VisceralLeishmaniasisDisposition"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Arthropod"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Protist"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Vertebrate"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/biotop/biotop.owl#Disposition"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#MaterialEntity"/>
+        <Class IRI="http://purl.org/biotop/biotop.owl#ProcessualEntity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <Class IRI="#Transfer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasis"/>
+        <Class IRI="#CutaneousLeishmaniasis"/>
+        <Class IRI="#MucocutaneousLeishmaniasis"/>
+        <Class IRI="#VisceralLeishmaniasis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#CutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#MucocutaneousLeishmaniasisDisposition"/>
+        <Class IRI="#VisceralLeishmaniasisDisposition"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ElSalvadorLocation"/>
+        <Class IRI="#GuadeloupeLocation"/>
+        <Class IRI="#MexicoLocation"/>
+        <Class IRI="#ParaguayLocation"/>
+        <Class IRI="#PeruLocation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LeishmaniaAmazonensis"/>
+        <Class IRI="#LeishmaniaBraziliensis"/>
+        <Class IRI="#LeishmaniaChagasi"/>
+        <Class IRI="#LeishmaniaMexicana"/>
+        <Class IRI="#LeishmaniaPeruviana"/>
+        <Class IRI="#LeishmaniaSp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LutzomyiaFlaviscutellata"/>
+        <Class IRI="#LutzomyiaLongipalpis"/>
+        <Class IRI="#LutzomyiaOlmecaOlmeca"/>
+        <Class IRI="#LutzomyiaPeruensis"/>
+        <Class IRI="#LutzomyiaVerrucarum"/>
+        <Class IRI="#LutzomyiaWhitmani"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasAgent"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#agentIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#bearerOf"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#inheresIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causes"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#causedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasPatient"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#patientIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#realizationOf"/>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasRealization"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#hasLocus"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://purl.org/biotop/biotop.owl#locusOf"/>
+    </TransitiveObjectProperty>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+
