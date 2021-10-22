@@ -1,12 +1,10 @@
-# Neglected Tropical Disease Ontology v.2 (NTDO2)
+# Neglected Tropical Disease Ontology (NTDO)
 
 This repository contains an updated version of the previous NTDO release - [Previous Website](https://www.cin.ufpe.br/~ntdo/)
 
-**Table of Contents**
-
 [TOCM]
 
-#Introduction
+## Introduction
 The Neglected Tropical Diseases (NTDs) are a set of diseases which persist in exactly the physical, psychosocial and economic situation of the poorest, most marginalized populations of the developing world. Most NTDs diseases are chronic diseases which are related to poverty as a promoter of parasitic, bacterial, and also viral or fungal infections. Although of major healthcare impact in developing and threshold countries NTDs are still seen as a rare event in developed countries.
 
 In the main target countries of Latin America, Asia and Sub-Saharan Africa, the distribution of NTD is controlled by climatic conditions like Temperature (15 ° C and 40 ° C), humidity and altitude (below 2200 meters). In these regions, most of the population (around 2.7 billion people) lives on the basis of about $ 2.00 per day. This population is considered the poorest in the world, and is also listed as most vulnerable to NTDs.
@@ -17,15 +15,16 @@ Envisioning the maintenance of health quality through health policy efforts, ont
 
 A prerequisite in the fight against vector-borne diseases it has recently been recognized that efforts are needed to facilitate the access to epidemiological knowledge about these diseases in a structured way. Controlled terminologies supported by ontologies help the user to systematically use this knowledge and permit large scale automated analysis approaches like logical and rule-based machine reasoning. At this level our effort concentrates on the most important point for vector-borne disease control is the transmission path, as it drives prevention strategies and decision support. It is also important to have an integration with tools to improve health policy related outcomes.
 
-##Methods and approaches
+###Methods and approaches
+To be updated soon...
 
-##Team
+###Team
 
-###Current active contributors (A - Z)
+####Current active contributors (A - Z)
 - [Filipe Santana da Silva](http://lattes.cnpq.br/8268902147804566)
 - [Gabriel Ramos dos Santos](http://lattes.cnpq.br/9549783211777653)
 
-###Previous active contributors (A - Z)
+####Previous active contributors (A - Z)
 - [Daniel Schober](https://orcid.org/0000-0001-8014-6648)
 - [Fred Freitas](http://lattes.cnpq.br/6195215666638965)
 - [Roberta de Medeiros Fernandes](http://lattes.cnpq.br/3961655686440683)
