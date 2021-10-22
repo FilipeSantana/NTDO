@@ -2,8 +2,6 @@
 
 This repository contains an updated version of the previous NTDO release - [Previous Website](https://www.cin.ufpe.br/~ntdo/)
 
-[TOCM]
-
 ## Introduction
 The Neglected Tropical Diseases (NTDs) are a set of diseases which persist in exactly the physical, psychosocial and economic situation of the poorest, most marginalized populations of the developing world. Most NTDs diseases are chronic diseases which are related to poverty as a promoter of parasitic, bacterial, and also viral or fungal infections. Although of major healthcare impact in developing and threshold countries NTDs are still seen as a rare event in developed countries.
 
@@ -15,22 +13,22 @@ Envisioning the maintenance of health quality through health policy efforts, ont
 
 A prerequisite in the fight against vector-borne diseases it has recently been recognized that efforts are needed to facilitate the access to epidemiological knowledge about these diseases in a structured way. Controlled terminologies supported by ontologies help the user to systematically use this knowledge and permit large scale automated analysis approaches like logical and rule-based machine reasoning. At this level our effort concentrates on the most important point for vector-borne disease control is the transmission path, as it drives prevention strategies and decision support. It is also important to have an integration with tools to improve health policy related outcomes.
 
-###Methods and approaches
+### Methods and approaches
 To be updated soon...
 
-###Team
+### Team
 
-####Current active contributors (A - Z)
+#### Current active contributors (A - Z)
 - [Filipe Santana da Silva](http://lattes.cnpq.br/8268902147804566)
 - [Gabriel Ramos dos Santos](http://lattes.cnpq.br/9549783211777653)
 
-####Previous active contributors (A - Z)
+#### Previous active contributors (A - Z)
 - [Daniel Schober](https://orcid.org/0000-0001-8014-6648)
 - [Fred Freitas](http://lattes.cnpq.br/6195215666638965)
 - [Roberta de Medeiros Fernandes](http://lattes.cnpq.br/3961655686440683)
 - [Stefan Schulz](http://user.medunigraz.at/stefan.schulz/)
 
-##Publications
+## Publications
 - Santana F, Fernandes R, Medeiros Z, Silva J, Freitas F. Ontologia para as doenças tropicais negligenciadas: avaliação dos dados do SIM e do SINAN. In: Anais do 10o Congresso Brasileiro de Saúde Coletiva. Porto Alegre: Associação Brasileira de Saúde Coletiva; 2012.
 - Santana F, Freitas F, Fernandes R, Medeiros Z, Schober D. Towards an ontological representation of morbidity and mortality in Description Logics. J Biomed Semantics. 2012;3(2):1–13. [LINK](https://jbiomedsem.biomedcentral.com/articles/10.1186/2041-1480-3-S2-S7)
 - Santana F, Fernandes R, Schober D, Bonfim C, Medeiros Z, Freitas F. Representing ‘casualties’ for epidemiological data processing. In: Herre H, Hoehndorf R, editors. OBML 2011 Workshop Proceedings [Internet]. Berlin, Heidelberg: Universität Leipzig, Medizinische Fakultät; 2011. [LINK](https://wiki.imise.uni-leipzig.de/Gruppen/OBML/Workshops/2011)
