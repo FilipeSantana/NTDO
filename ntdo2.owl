@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/ntdo2/"
+     xml:base="http://purl.org/ntdo2/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:ntdo2="http://purl.org/ntdo2/"
+     xmlns:ru-meta="http://purl.org/imbi/ru-meta.owl#">
+    <owl:Ontology rdf:about="http://purl.org/ntdo2/">
+        <owl:versionIRI rdf:resource="http://purl.org/ntdo2/0.1"/>
+        <owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/>
+        <dc:contributor>Daniel Schober (https://orcid.org/0000-0001-8014-6648)</dc:contributor>
+        <dc:contributor>Fred Freitas (http://lattes.cnpq.br/6195215666638965)</dc:contributor>
+        <dc:contributor>Gabriel Ramos dos Santos (http://lattes.cnpq.br/9549783211777653)</dc:contributor>
+        <dc:contributor>Roberta de Medeiros Fernandes (http://lattes.cnpq.br/3961655686440683)</dc:contributor>
+        <dc:contributor>Stefan Schulz (http://user.medunigraz.at/stefan.schulz/)</dc:contributor>
+        <dc:creator>Filipe Santana da Silva (http://lattes.cnpq.br/8268902147804566)</dc:creator>
+        <dc:language>en</dc:language>
+        <dc:publisher>Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA)</dc:publisher>
+        <dc:requires>BioTopLite2 (http://purl.org/biotop/btl2.owl)</dc:requires>
+        <dc:title>Neglected Tropical Disease Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/requires -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/requires"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/imbi/ru-meta.owl#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/imbi/ru-meta.owl#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#hasDuration"/>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#physicallyContains -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#physicallyContains">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#includes"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#ImmaterialObject"/>
+                    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#MaterialObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#ImmaterialObject"/>
+                    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#MaterialObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <ru-meta:definition>Containment is location without parthood. E.g. Food is contained in the stomach. 
+
+Schulz S, Hahn U. Towards the ontological foundations of symbolic biological theories.
+Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
+        <rdfs:label>physically contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/biotop/btl2.owl#isReferredToAtTime -->
+
+    <rdf:Description rdf:about="http://purl.org/biotop/btl2.owl#isReferredToAtTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ntdo2/hasDeathPatient -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasDeathPatient">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+        <rdfs:label>has death patient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ntdo2/hasPrimaryDeathCause -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasPrimaryDeathCause">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#isCausedBy"/>
+        <rdfs:label>has primary death cause</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ntdo2/hasRelatedDeathCause -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasRelatedDeathCause">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#isCausedBy"/>
+        <rdfs:label>has related death cause</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/LeishmaniasisDisposition"/>
+        <rdfs:label>acute diffuse cutaneous leishmaniasis disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/BirthProcess -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/BirthProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#InstantaneousProcess"/>
+        <rdfs:label>birth process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/LeishmaniasisDisposition"/>
+        <rdfs:label>cutaneous leishmaniasis disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/Death -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/Death">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Process"/>
+        <rdfs:label>death</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/DeathEvent -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/DeathEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#InstantaneousProcess"/>
+        <rdfs:label>death process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/InjuryProcess -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/InjuryProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#InstantaneousProcess"/>
+        <rdfs:label>injury process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/Leishmania -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/Leishmania">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Organism"/>
+        <rdfs:label>leishmania</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaAmazonensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaAristedesi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaAristedesi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaBraziliensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaChagasi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaColombiensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaGarnhami -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaGuyanensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania guyanensis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaInfantum -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania infantum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaLainsoni -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania lainsoni</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaLlanosmartini -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaMexicana -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaMexicanaLike -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaNaiffi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaPanamensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaPeruviana -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPeruviana">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaPifanoi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaShawi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaShawi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaSp -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaSp">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaVenezuelensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaYucumensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniasisDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniasisDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/PathologicalDisposition"/>
+        <rdfs:label>leishmaniasis disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/LeishmaniasisDisposition"/>
+        <rdfs:label>mucocutaneous leishmaniasis disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/PathologicalDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/PathologicalDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
+        <rdfs:label>pathological disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/VisceralLeishmaniasisDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasisDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/LeishmaniasisDisposition"/>
+        <rdfs:label>visceral leishmaniasis disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#DeathDisposition -->
+
+    <owl:Class rdf:about="http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl#DeathDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
+        <rdfs:label>death disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAristedesi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPeruviana"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaShawi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
