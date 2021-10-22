@@ -2,9 +2,6 @@
 
 This repository contains an updated version of the previous NTDO release - [Previous Website](https://www.cin.ufpe.br/~ntdo/)
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![]
-
-
 **Table of Contents**
 
 [TOCM]
