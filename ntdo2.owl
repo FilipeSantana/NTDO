@@ -12,7 +12,9 @@
      xmlns:ru-meta="http://purl.org/imbi/ru-meta.owl#">
     <owl:Ontology rdf:about="http://purl.org/ntdo2/">
         <owl:versionIRI rdf:resource="http://purl.org/ntdo2/0.1"/>
+        <owl:imports rdf:resource="http://purl.org/biotop/biotop.owl"/>
         <owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/>
+        <owl:imports rdf:resource="http://purl.org/ntdo2/0.1"/>
         <dc:contributor>Daniel Schober (https://orcid.org/0000-0001-8014-6648)</dc:contributor>
         <dc:contributor>Fred Freitas (http://lattes.cnpq.br/6195215666638965)</dc:contributor>
         <dc:contributor>Gabriel Ramos dos Santos (http://lattes.cnpq.br/9549783211777653)</dc:contributor>
@@ -77,12 +79,6 @@
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
-
-
-    <!-- http://purl.org/imbi/ru-meta.owl#definition -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/imbi/ru-meta.owl#definition"/>
     
 
 
@@ -178,6 +174,12 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/biotop/biotop.owl#Human -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+    
+
+
     <!-- http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition">
@@ -196,20 +198,20 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/CutaneousLeishmaniasis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <rdfs:label>cutaneous leishmaniasis</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/LeishmaniasisDisposition"/>
         <rdfs:label>cutaneous leishmaniasis disposition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/ntdo2/Death -->
-
-    <owl:Class rdf:about="http://purl.org/ntdo2/Death">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Process"/>
-        <rdfs:label>death</rdfs:label>
     </owl:Class>
     
 
@@ -223,6 +225,15 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/HomoSapiens -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/HomoSapiens">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+        <rdfs:label>homo sapiens</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/InjuryProcess -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/InjuryProcess">
@@ -232,10 +243,20 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/LeftTimeBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeftTimeBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/TimeBoundary"/>
+        <owl:disjointWith rdf:resource="http://purl.org/ntdo2/RightTimeBoundary"/>
+        <rdfs:label>left time boundary</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/Leishmania -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/Leishmania">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Organism"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Protist"/>
         <rdfs:label>leishmania</rdfs:label>
     </owl:Class>
     
@@ -245,6 +266,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania amazonensis</rdfs:label>
     </owl:Class>
     
 
@@ -253,6 +275,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaAristedesi">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania aristedesi</rdfs:label>
     </owl:Class>
     
 
@@ -261,6 +284,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania braziliensis</rdfs:label>
     </owl:Class>
     
 
@@ -269,6 +293,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania chagasi</rdfs:label>
     </owl:Class>
     
 
@@ -277,6 +302,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania colombiensis</rdfs:label>
     </owl:Class>
     
 
@@ -285,6 +311,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania garnhami</rdfs:label>
     </owl:Class>
     
 
@@ -320,6 +347,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania llanosmartini</rdfs:label>
     </owl:Class>
     
 
@@ -328,6 +356,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania mexicana</rdfs:label>
     </owl:Class>
     
 
@@ -336,6 +365,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania mexicana like</rdfs:label>
     </owl:Class>
     
 
@@ -344,6 +374,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania naiffi</rdfs:label>
     </owl:Class>
     
 
@@ -352,6 +383,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania panamensis</rdfs:label>
     </owl:Class>
     
 
@@ -360,6 +392,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPeruviana">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania peruviana</rdfs:label>
     </owl:Class>
     
 
@@ -368,6 +401,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania pifanoi</rdfs:label>
     </owl:Class>
     
 
@@ -376,6 +410,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaShawi">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania shawi</rdfs:label>
     </owl:Class>
     
 
@@ -384,6 +419,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaSp">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania sp</rdfs:label>
     </owl:Class>
     
 
@@ -392,6 +428,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania venezuelensis</rdfs:label>
     </owl:Class>
     
 
@@ -400,6 +437,16 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
+        <rdfs:label>leishmania yucumensis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/Leishmaniasis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/Leishmaniasis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <rdfs:label>acute diffuse cutaneous leishmaniasis</rdfs:label>
     </owl:Class>
     
 
@@ -413,6 +460,285 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/Lutzomyia -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/Lutzomyia">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Insect"/>
+        <rdfs:label>lutzomyia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaAnduzei -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaAnduzei">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia anduzei</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaAyacuchenisis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaAyacuchenisis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia ayacuchenisis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaAyrozai -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaAyrozai">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia ayrozai</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaCarreraiCarrerai -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaCarreraiCarrerai">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia carrerai carrerai</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaColumbiana -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaColumbiana">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia columbiana</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaCruciata -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaCruciata">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia cruciata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaEvansi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia evansi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaFlaviscutellata -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia flaviscutellata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaGomezi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia gomezi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaHartmanni -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia hartmanni</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaIntermedia -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaIntermedia">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia intermedia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaLongipalpis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia longipalpis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaOlmeca -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaOlmeca">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia olmeca</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaOlmecaBicolor -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaBicolor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia olmeca bicolor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia olmeca olmeca</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaOvallesi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia ovallesi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaPanamensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia panamensis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaPeruensis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaPeruensis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia peruensis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaSp -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaSp">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia sp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaSpinicrassa -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia spinicrassa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaSquamiventris -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaSquamiventris">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia squamiventris</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaTrapidoi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia trapidoi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaUbiquitalis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaUbiquitalis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia ubiquitalis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaUmbretilis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia umbretilis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaVerrucarum -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaVerrucarum">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia verrucarum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaWellcomei -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaWellcomei">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia wellcomei</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaWhitmani -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia whitmani</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaYlephiletor -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia ylephiletor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LutzomyiaYoungi -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LutzomyiaYoungi">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Lutzomyia"/>
+        <rdfs:label>lutzomyia youngi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/MucocutaneousLeishmaniasis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <rdfs:label>mucocutaneous leishmaniasis</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition">
@@ -422,11 +748,56 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/OrganismCharacteristicValueRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/OrganismCharacteristicValueRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#ValueRegion"/>
+        <rdfs:label>organism characteristic value region</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/PathologicalDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PathologicalDisposition">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
         <rdfs:label>pathological disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/PhenotypicSexValueRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/PhenotypicSexValueRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/OrganismCharacteristicValueRegion"/>
+        <rdfs:label>phenotypic sex value region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/RightTimeBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/RightTimeBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/TimeBoundary"/>
+        <rdfs:label>right time boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/TimeBoundary -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/TimeBoundary">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#TemporalRegion"/>
+        <rdfs:label>time boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/VisceralLeishmaniasis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <rdfs:label>visceral leishmaniasis</rdfs:label>
     </owl:Class>
     
 
@@ -480,6 +851,40 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAnduzei"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyacuchenisis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyrozai"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCarreraiCarrerai"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaColumbiana"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCruciata"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaIntermedia"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmeca"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaBicolor"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPeruensis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSp"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSquamiventris"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUbiquitalis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaVerrucarum"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWellcomei"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYoungi"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
