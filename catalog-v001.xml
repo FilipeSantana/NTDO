@@ -4,26 +4,27 @@
     <uri id="Imports Wizard Entry" name="http://purl.org/ntdo2/0.1" uri="ntdo2.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/biotop/btl2.owl" uri="https://raw.githubusercontent.com/BioTopOntology/biotop/master/btl2.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://purl.org/ntdo2/" uri="ntdo2.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/NTDO/LeishmaniasisNTDO.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/LeishmaniasisNTDO.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/CID-10.owl" uri="Previous%20content/OWL%20Files/CID-10.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl" uri="Previous%20content/OWL%20Files/DengueFever.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/GeoOnto.owl" uri="Previous%20content/OWL%20Files/GeoOnto.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl" uri="Previous%20content/OWL%20Files/InjuryAndDeath.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/Leishmaniasis.owl" uri="Previous%20content/OWL%20Files/Leishmaniasis.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl" uri="Previous%20content/OWL%20Files/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/RCC8GeoRep.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SinanD2RQServer/src/main/resources/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.semanticweb.org/ontologies/2010/10/Ontology321964085.owl" uri="Previous%20content/TboxGenerator%20Files/version_k/RealOntology_k.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.semanticweb.org/ontologies/2010/10/Ontology58975935.owl" uri="Previous%20content/TboxGenerator%20Files/version_k/TrivialOntology_k.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="duplicate:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20FC%20-%20BioTopNTDO.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="duplicate:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20FullClasses.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="http://www.semanticweb.org/ontologies/2010/10/Ontology802623987.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20TestSubset.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SinanD2RQServer/target/classes/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SimD2RQServer/src/main/resources/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SimD2RQServer/target/classes/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/ntdo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/TboxGenerator%20-%20Transmission%20Pattern.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1634929993506" name="shadowed:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/TboxGenerator%20-%20Transmission%20Pattern_int.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://purl.org/biotop/biotop.owl" uri="Previous%20content/OWL%20Files/biotop.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://purl.org/ntdo2/" uri="ntdo2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/NTDO/LeishmaniasisNTDO.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/LeishmaniasisNTDO.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/CID-10.owl" uri="Previous%20content/OWL%20Files/CID-10.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/DengueFever.owl" uri="Previous%20content/OWL%20Files/DengueFever.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/GeoOnto.owl" uri="Previous%20content/OWL%20Files/GeoOnto.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/InjuryAndDeath.owl" uri="Previous%20content/OWL%20Files/InjuryAndDeath.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/Leishmaniasis.owl" uri="Previous%20content/OWL%20Files/Leishmaniasis.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/OWLFiles/ntdo.owl" uri="Previous%20content/OWL%20Files/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/RCC8GeoRep.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/RCC8GeoRep.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SinanD2RQServer/src/main/resources/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.semanticweb.org/ontologies/2010/10/Ontology321964085.owl" uri="Previous%20content/TboxGenerator%20Files/version_k/RealOntology_k.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.semanticweb.org/ontologies/2010/10/Ontology58975935.owl" uri="Previous%20content/TboxGenerator%20Files/version_k/TrivialOntology_k.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="duplicate:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20FC%20-%20BioTopNTDO.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="duplicate:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20FullClasses.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="http://www.semanticweb.org/ontologies/2010/10/Ontology802623987.owl" uri="Previous%20content/TboxGenerator%20Files/version_m/Tbox%20Leishmaniasis%20-%20TestSubset.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SinanD2RQServer/target/classes/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SimD2RQServer/src/main/resources/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/SimD2RQServer/target/classes/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.cin.ufpe.br/~ntdo/ntdo.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/ntdo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/TboxGenerator%20-%20Transmission%20Pattern.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1635430188108" name="shadowed:http://www.semanticweb.org/ontologies/2010/10/Ontology627677560.owl" uri="Previous%20content/OWL%20Files/Before%20Refactory%20-%2028.11/TboxGenerator%20-%20Transmission%20Pattern_int.owl"/>
     </group>
 </catalog>
