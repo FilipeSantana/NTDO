@@ -204,11 +204,59 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/ArgentinaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/ArgentinaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/BelizeLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/BelizeLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/BirthProcess -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BirthProcess">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#InstantaneousProcess"/>
         <rdfs:label>birth process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/BoliviaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/BoliviaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/BrazilLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/BrazilLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/ColombiaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/ColombiaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/CostaRicaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/CostaRicaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
     </owl:Class>
     
 
@@ -295,11 +343,84 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/DominicanLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/DominicanLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/EcuadorLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/EcuadorLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/ElSalvadorLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/ElSalvadorLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/FrenchGuyanaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/FrenchGuyanaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/GeographicEntity -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/GeographicEntity">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#MaterialObject"/>
+        <rdfs:label>geographic entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/GuadeloupeLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/GuadeloupeLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/GuatemalaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/GuatemalaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/GuyanaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/GuyanaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/HomoSapiens -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/HomoSapiens">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
         <rdfs:label>homo sapiens</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/HondurasLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/HondurasLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
     </owl:Class>
     
 
@@ -848,6 +969,22 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/MartiniqueLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/MartiniqueLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/MexicoLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/MexicoLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/MucocutaneousLeishmaniasis -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis">
@@ -921,6 +1058,14 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/NicaraguaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/NicaraguaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/OrganismCharacteristicValueRegion -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/OrganismCharacteristicValueRegion">
@@ -930,11 +1075,35 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/PanamaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/PanamaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/ParaguayLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/ParaguayLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/PathologicalDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PathologicalDisposition">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
         <rdfs:label>pathological disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/PeruLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/PeruLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
     </owl:Class>
     
 
@@ -957,11 +1126,43 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/SurinamLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/SurinamLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/TimeBoundary -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/TimeBoundary">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#TemporalRegion"/>
         <rdfs:label>time boundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/Transfer -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/Transfer">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/USALocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/USALocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/VenezualaLocation -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/VenezualaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
     </owl:Class>
     
 
@@ -1713,6 +1914,34 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
             <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasisDisposition"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ntdo2/ArgentinaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/BelizeLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/BoliviaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/BrazilLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/ColombiaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/CostaRicaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/DominicanLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/EcuadorLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/ElSalvadorLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/FrenchGuyanaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/GuadeloupeLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/GuatemalaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/GuyanaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/HondurasLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/MartiniqueLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/MexicoLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/NicaraguaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/PanamaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/ParaguayLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/PeruLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/SurinamLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/USALocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/VenezualaLocation"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
