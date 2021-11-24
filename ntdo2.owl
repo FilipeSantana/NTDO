@@ -108,6 +108,14 @@ Institute of Medical Biometry and Medical Informatics (IMBI)</dc:publisher>
     
 
 
+    <!-- http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn -->
+
+    <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#isIncludedIn"/>
+    </rdf:Description>
+    
+
+
     <!-- http://purl.org/biotop/biotop.owl#physicallyContains -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#physicallyContains">
@@ -145,11 +153,32 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/geographicallyLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/geographicallyLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ntdo2/spatiallyRelatedTo"/>
+        <owl:inverseOf rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+        <rdfs:domain rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
+        <rdfs:label>geographically located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ntdo2/hasDeathPatient -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasDeathPatient">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
         <rdfs:label>has death patient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ntdo2/hasGeographicLocation -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasGeographicLocation">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ntdo2/spatiallyRelatedTo"/>
+        <rdfs:range rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
+        <rdfs:label>has geographic location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -168,6 +197,14 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/hasRelatedDeathCause">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#isCausedBy"/>
         <rdfs:label>has related death cause</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ntdo2/spatiallyRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ntdo2/spatiallyRelatedTo">
+        <rdfs:label>spatially related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -207,7 +244,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ArgentinaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ArgentinaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>argentina location</rdfs:label>
     </owl:Class>
     
 
@@ -215,7 +253,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BelizeLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BelizeLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>belize location</rdfs:label>
     </owl:Class>
     
 
@@ -232,7 +271,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BoliviaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BoliviaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>bolivia location</rdfs:label>
     </owl:Class>
     
 
@@ -240,7 +280,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BrazilLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BrazilLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>brazil location</rdfs:label>
     </owl:Class>
     
 
@@ -248,7 +289,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ColombiaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ColombiaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>colombia location</rdfs:label>
     </owl:Class>
     
 
@@ -256,7 +298,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/CostaRicaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/CostaRicaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>costa rica location</rdfs:label>
     </owl:Class>
     
 
@@ -346,7 +389,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/DominicanLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/DominicanLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>dominican location</rdfs:label>
     </owl:Class>
     
 
@@ -354,7 +398,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/EcuadorLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/EcuadorLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>Ecuador Location</rdfs:label>
     </owl:Class>
     
 
@@ -362,7 +407,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ElSalvadorLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ElSalvadorLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>el salvador location</rdfs:label>
     </owl:Class>
     
 
@@ -370,16 +416,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/FrenchGuyanaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/FrenchGuyanaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/ntdo2/GeographicEntity -->
-
-    <owl:Class rdf:about="http://purl.org/ntdo2/GeographicEntity">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#MaterialObject"/>
-        <rdfs:label>geographic entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>french guyana location</rdfs:label>
     </owl:Class>
     
 
@@ -387,7 +425,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuadeloupeLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuadeloupeLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>guadeloupe location</rdfs:label>
     </owl:Class>
     
 
@@ -395,7 +434,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuatemalaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuatemalaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>guatemala location</rdfs:label>
     </owl:Class>
     
 
@@ -403,7 +443,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuyanaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuyanaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>guyana location</rdfs:label>
     </owl:Class>
     
 
@@ -420,7 +461,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/HondurasLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/HondurasLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>honduras location</rdfs:label>
     </owl:Class>
     
 
@@ -611,6 +653,2208 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaSp">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
         <rdfs:label>leishmania sp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_1"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_10"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_11"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_12"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_13"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_14"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_15"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_16"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_17"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_18"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_19"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_2"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_20"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_21"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_22"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_23"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_3"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_4"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_5"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_6"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_7"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_8"/>
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_9"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_1 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaIntermedia"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/ArgentinaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaIntermedia"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/ArgentinaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_10 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_10">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSquamiventris"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/FrenchGuyanaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSquamiventris"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/FrenchGuyanaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_11 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_11">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/GuadeloupeLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/GuadeloupeLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_12 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_12">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCruciata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/GuatemalaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCruciata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/GuatemalaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_13 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_13">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAnduzei"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/GuyanaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAnduzei"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/GuyanaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_14 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_14">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HondurasLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/HondurasLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_15 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_15">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/MartiniqueLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/MartiniqueLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_16 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_16">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/MexicoLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/MexicoLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_17 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_17">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/NicaraguaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYlephiletor"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/NicaraguaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_18 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_18">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAristedesi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/PanamaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPanamensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAristedesi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/PanamaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_19 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_19">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/ParaguayLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/ParaguayLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_2 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/BelizeLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/BelizeLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_20 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_20">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPeruensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaVerrucarum"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPeruviana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/PeruLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaPeruensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaVerrucarum"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPeruviana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/PeruLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_21 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_21">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/SurinamLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/SurinamLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_22 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_22">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/USALocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/USALocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_23 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_23">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaBicolor"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYoungi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/VenezuelaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaBicolor"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOvallesi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaYoungi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/VenezuelaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_3 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCarreraiCarrerai"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/BoliviaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaCarreraiCarrerai"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/BoliviaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_4 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_4">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyrozai"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUbiquitalis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWellcomei"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaShawi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/BrazilLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyrozai"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUbiquitalis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWellcomei"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaWhitmani"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaShawi"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/BrazilLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_5 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_5">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaColumbiana"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/ColombiaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaColumbiana"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaEvansi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaFlaviscutellata"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaHartmanni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaSpinicrassa"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaUmbretilis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/ColombiaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_6 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_6">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/CostaRicaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaOlmecaOlmeca"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/CostaRicaLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_7 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_7">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaSp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/DominicanLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaSp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/Leishmaniasis"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/DominicanLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_8 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_8">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyacuchenisis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/EcuadorLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaAyacuchenisis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaGomezi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LutzomyiaTrapidoi"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/EcuadorLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ntdo2/LeishmaniaTransferByVector_9 -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_9">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ntdo2/Transfer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/ElSalvadorLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Transfer"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/LutzomyiaLongipalpis"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
+                                        <owl:allValuesFrom>
+                                            <owl:Class>
+                                                <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+                                                </owl:unionOf>
+                                            </owl:Class>
+                                        </owl:allValuesFrom>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ntdo2/hasGeographicLocation"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/ElSalvadorLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -972,7 +3216,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/MartiniqueLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MartiniqueLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>martinique location</rdfs:label>
     </owl:Class>
     
 
@@ -980,7 +3225,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/MexicoLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MexicoLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>mexico location</rdfs:label>
     </owl:Class>
     
 
@@ -1061,7 +3307,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/NicaraguaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/NicaraguaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>nicaragua location</rdfs:label>
     </owl:Class>
     
 
@@ -1078,7 +3325,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/PanamaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PanamaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>panama location</rdfs:label>
     </owl:Class>
     
 
@@ -1086,7 +3334,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ParaguayLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ParaguayLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>paraguay location</rdfs:label>
     </owl:Class>
     
 
@@ -1103,7 +3352,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/PeruLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PeruLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>peru location</rdfs:label>
     </owl:Class>
     
 
@@ -1126,10 +3376,21 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/SpatialRegion -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/SpatialRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#ImmaterialThreeDimensionalPhysicalEntity"/>
+        <rdfs:label>geographic entity</rdfs:label>
+        <rdfs:label>spatial region</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/SurinamLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/SurinamLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>surinam location</rdfs:label>
     </owl:Class>
     
 
@@ -1154,15 +3415,17 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/USALocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/USALocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>usa location</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/ntdo2/VenezualaLocation -->
+    <!-- http://purl.org/ntdo2/VenezuelaLocation -->
 
-    <owl:Class rdf:about="http://purl.org/ntdo2/VenezualaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/GeographicEntity"/>
+    <owl:Class rdf:about="http://purl.org/ntdo2/VenezuelaLocation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:label>venezuela location</rdfs:label>
     </owl:Class>
     
 
@@ -1941,7 +4204,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
             <rdf:Description rdf:about="http://purl.org/ntdo2/PeruLocation"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/SurinamLocation"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/USALocation"/>
-            <rdf:Description rdf:about="http://purl.org/ntdo2/VenezualaLocation"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/VenezuelaLocation"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1976,6 +4239,34 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_1"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_10"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_11"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_12"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_13"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_14"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_15"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_16"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_17"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_18"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_19"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_2"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_20"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_21"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_22"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_23"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_3"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_4"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_5"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_6"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_7"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_8"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaTransferByVector_9"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
