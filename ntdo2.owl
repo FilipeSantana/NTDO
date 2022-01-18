@@ -226,6 +226,63 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis -->
+
+    <owl:Class rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isCausedBy"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaShawi"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
+                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isIncludedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>acute diffuse cutaneous leishmaniasis</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition">
@@ -233,7 +290,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#hasRealization"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/Leishmaniasis"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>acute diffuse cutaneous leishmaniasis disposition</rdfs:label>
@@ -873,8 +930,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                 </owl:unionOf>
                                             </owl:Class>
@@ -1243,8 +1300,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
@@ -1408,8 +1465,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
                                             </owl:Class>
@@ -1710,8 +1767,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
                                             </owl:Class>
@@ -2035,8 +2092,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                 </owl:unionOf>
                                             </owl:Class>
                                         </owl:allValuesFrom>
@@ -2151,8 +2208,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
@@ -2257,8 +2314,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
@@ -2375,8 +2432,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
@@ -2493,8 +2550,8 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                         <owl:allValuesFrom>
                                             <owl:Class>
                                                 <owl:unionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-                                                    <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
                                                     <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
                                                 </owl:unionOf>
@@ -2662,7 +2719,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                     <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#causes"/>
-                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/Leishmaniasis"/>
+                                        <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -2873,63 +2930,6 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/Leishmania"/>
         <rdfs:label>leishmania yucumensis</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/ntdo2/Leishmaniasis -->
-
-    <owl:Class rdf:about="http://purl.org/ntdo2/Leishmaniasis">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isCausedBy"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaAmazonensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaBraziliensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaColombiensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGarnhami"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaGuyanensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaInfantum"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLainsoni"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaLlanosmartini"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicana"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaMexicanaLike"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaNaiffi"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPanamensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaPifanoi"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaShawi"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaSp"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaVenezuelensis"/>
-                                    <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaYucumensis"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isIncludedIn"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalProcess"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/biotop/btl2.owl#isRealizationOf"/>
-                <owl:allValuesFrom rdf:resource="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label>acute diffuse cutaneous leishmaniasis</rdfs:label>
     </owl:Class>
     
 
@@ -4173,6 +4173,15 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
+            <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasisDisposition"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasisDisposition"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasisDisposition"/>
@@ -4205,15 +4214,6 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
             <rdf:Description rdf:about="http://purl.org/ntdo2/SurinamLocation"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/USALocation"/>
             <rdf:Description rdf:about="http://purl.org/ntdo2/VenezuelaLocation"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/ntdo2/CutaneousLeishmaniasis"/>
-            <rdf:Description rdf:about="http://purl.org/ntdo2/Leishmaniasis"/>
-            <rdf:Description rdf:about="http://purl.org/ntdo2/MucocutaneousLeishmaniasis"/>
-            <rdf:Description rdf:about="http://purl.org/ntdo2/VisceralLeishmaniasis"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
