@@ -226,6 +226,15 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalDisposition -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalDisposition">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
+        <rdfs:label>pathological disposition</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/AcuteDiffuseCutaneousLeishmaniasis">
@@ -2937,7 +2946,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/LeishmaniasisDisposition -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/LeishmaniasisDisposition">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/PathologicalDisposition"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#PathologicalDisposition"/>
         <rdfs:label>leishmaniasis disposition</rdfs:label>
     </owl:Class>
     
@@ -3336,15 +3345,6 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <owl:Class rdf:about="http://purl.org/ntdo2/ParaguayLocation">
         <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
         <rdfs:label>paraguay location</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/ntdo2/PathologicalDisposition -->
-
-    <owl:Class rdf:about="http://purl.org/ntdo2/PathologicalDisposition">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
-        <rdfs:label>pathological disposition</rdfs:label>
     </owl:Class>
     
 
