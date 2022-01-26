@@ -75,6 +75,8 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		
+		<!-- Outdated and problematic content
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-xc</artifactId>
@@ -91,12 +93,15 @@
 			<version>${jackson.version}</version>
 		</dependency>
 	</dependencies>
-
+	-->
+	
+		<!-- Outdated and problematic content
 	<properties>
 		<jackson.version>1.8.5</jackson.version>
 		<encoding.default>UTF-8</encoding.default>
 		<java.version>1.6</java.version>
 	</properties>
+		-->
 	
 	<build>
         <pluginManagement>
