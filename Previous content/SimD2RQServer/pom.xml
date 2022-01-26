@@ -70,11 +70,14 @@
 			<artifactId>jersey-client</artifactId>
 			<version>1.9</version>
 		</dependency>
+		
+		<!-- Outdated and problematic content
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		-->
 		
 		<!-- Outdated and problematic content
 		<dependency>
