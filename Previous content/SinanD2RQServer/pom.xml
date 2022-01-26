@@ -69,6 +69,7 @@
 			<artifactId>jersey-client</artifactId>
 			<version>1.9</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -96,5 +97,5 @@
 		<encoding.default>UTF-8</encoding.default>
 		<java.version>1.6</java.version>
 	</properties>
-
+	-->
 </project>
