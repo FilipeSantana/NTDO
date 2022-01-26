@@ -12,7 +12,7 @@
      xmlns:ru-meta="http://purl.org/imbi/ru-meta.owl#">
     <owl:Ontology rdf:about="http://purl.org/ntdo2/">
         <owl:versionIRI rdf:resource="http://purl.org/ntdo2/v1"/>
-        <owl:imports rdf:resource="http://purl.org/biotop/biotop.owl"/>
+        <owl:imports rdf:resource="http://purl.org/biotop/btl2.owl"/>
         <dc:contributor>Daniel Schober (https://orcid.org/0000-0001-8014-6648)</dc:contributor>
         <dc:contributor>Fred Freitas (http://lattes.cnpq.br/6195215666638965)</dc:contributor>
         <dc:contributor>Gabriel Ramos dos Santos (http://lattes.cnpq.br/9549783211777653)</dc:contributor>
@@ -90,6 +90,12 @@ Institute of Medical Biometry and Medical Informatics (IMBI)</dc:publisher>
     
 
 
+    <!-- http://purl.org/imbi/ru-meta.owl#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/imbi/ru-meta.owl#definition"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -109,9 +115,9 @@ Institute of Medical Biometry and Medical Informatics (IMBI)</dc:publisher>
 
     <!-- http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn -->
 
-    <rdf:Description rdf:about="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn">
+    <owl:ObjectProperty rdf:about="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/biotop/btl2.owl#isIncludedIn"/>
-    </rdf:Description>
+    </owl:ObjectProperty>
     
 
 
@@ -229,9 +235,11 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
-    <!-- http://purl.org/biotop/biotop.owl#Human -->
+    <!-- http://purl.org/biotop/biotop.owl#Insect -->
 
-    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Human"/>
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Insect">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Organism"/>
+    </owl:Class>
     
 
 
@@ -240,6 +248,32 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalDisposition">
         <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Disposition"/>
         <rdfs:label>pathological disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#PathologicalProcess -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#PathologicalProcess">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#Protist -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#Protist">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Organism"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/biotop/biotop.owl#SpatialRegion -->
+
+    <owl:Class rdf:about="http://purl.org/biotop/biotop.owl#SpatialRegion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#ImmaterialThreeDimensionalPhysicalEntity"/>
+        <rdfs:label>geographic entity</rdfs:label>
+        <rdfs:label>spatial region</rdfs:label>
     </owl:Class>
     
 
@@ -331,7 +365,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ArgentinaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ArgentinaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>argentina location</rdfs:label>
     </owl:Class>
     
@@ -340,7 +374,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BelizeLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BelizeLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>belize location</rdfs:label>
     </owl:Class>
     
@@ -358,7 +392,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BoliviaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BoliviaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>bolivia location</rdfs:label>
     </owl:Class>
     
@@ -367,7 +401,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/BrazilLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/BrazilLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>brazil location</rdfs:label>
     </owl:Class>
     
@@ -376,7 +410,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ColombiaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ColombiaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>colombia location</rdfs:label>
     </owl:Class>
     
@@ -385,7 +419,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/CostaRicaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/CostaRicaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>costa rica location</rdfs:label>
     </owl:Class>
     
@@ -476,7 +510,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/DominicanLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/DominicanLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>dominican location</rdfs:label>
     </owl:Class>
     
@@ -485,7 +519,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/EcuadorLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/EcuadorLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>Ecuador Location</rdfs:label>
     </owl:Class>
     
@@ -494,7 +528,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ElSalvadorLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ElSalvadorLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>el salvador location</rdfs:label>
     </owl:Class>
     
@@ -503,7 +537,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/FrenchGuyanaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/FrenchGuyanaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>french guyana location</rdfs:label>
     </owl:Class>
     
@@ -512,7 +546,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuadeloupeLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuadeloupeLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>guadeloupe location</rdfs:label>
     </owl:Class>
     
@@ -521,7 +555,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuatemalaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuatemalaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>guatemala location</rdfs:label>
     </owl:Class>
     
@@ -530,7 +564,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/GuyanaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/GuyanaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>guyana location</rdfs:label>
     </owl:Class>
     
@@ -539,7 +573,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/HomoSapiens -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/HomoSapiens">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#Organism"/>
         <rdfs:label>homo sapiens</rdfs:label>
     </owl:Class>
     
@@ -548,7 +582,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/HondurasLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/HondurasLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>honduras location</rdfs:label>
     </owl:Class>
     
@@ -1001,7 +1035,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
                                     <rdf:Description rdf:about="http://purl.org/ntdo2/LeishmaniaChagasi"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://purl.org/biotop/biotop.owl#isPhysicallyContainedIn"/>
-                                        <owl:someValuesFrom rdf:resource="http://purl.org/biotop/biotop.owl#Human"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/ntdo2/HomoSapiens"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -3246,7 +3280,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/MartiniqueLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MartiniqueLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>martinique location</rdfs:label>
     </owl:Class>
     
@@ -3255,7 +3289,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/MexicoLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/MexicoLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>mexico location</rdfs:label>
     </owl:Class>
     
@@ -3337,7 +3371,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/NicaraguaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/NicaraguaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>nicaragua location</rdfs:label>
     </owl:Class>
     
@@ -3355,7 +3389,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/PanamaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PanamaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>panama location</rdfs:label>
     </owl:Class>
     
@@ -3364,7 +3398,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/ParaguayLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/ParaguayLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>paraguay location</rdfs:label>
     </owl:Class>
     
@@ -3373,7 +3407,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/PeruLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/PeruLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>peru location</rdfs:label>
     </owl:Class>
     
@@ -3397,20 +3431,10 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     
 
 
-    <!-- http://purl.org/ntdo2/SpatialRegion -->
-
-    <owl:Class rdf:about="http://purl.org/ntdo2/SpatialRegion">
-        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/btl2.owl#ImmaterialThreeDimensionalPhysicalEntity"/>
-        <rdfs:label>geographic entity</rdfs:label>
-        <rdfs:label>spatial region</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/ntdo2/SurinamLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/SurinamLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>surinam location</rdfs:label>
     </owl:Class>
     
@@ -3436,7 +3460,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/USALocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/USALocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>usa location</rdfs:label>
     </owl:Class>
     
@@ -3445,7 +3469,7 @@ Artif Intell Med. 2007 Mar;39(3):237-50. PMID: 17321118  </ru-meta:definition>
     <!-- http://purl.org/ntdo2/VenezuelaLocation -->
 
     <owl:Class rdf:about="http://purl.org/ntdo2/VenezuelaLocation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ntdo2/SpatialRegion"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/biotop/biotop.owl#SpatialRegion"/>
         <rdfs:label>venezuela location</rdfs:label>
     </owl:Class>
     
